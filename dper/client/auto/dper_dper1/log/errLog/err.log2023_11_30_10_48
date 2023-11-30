@@ -1,0 +1,6 @@
+[2023-11-30 10:48:08] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 5cd640c7377fa8c9 127.0.0.1:61814 failed checkpoint posthandshake: Connected to self
+[2023-11-30 10:48:08] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 5cd640c7377fa8c9 127.0.0.1:20131 failed checkpoint posthandshake: Connected to self
+[2023-11-30 10:48:20] [error] key_store_plain.go:58 dpchain/crypto/keys.getKey stat accounts/0000000000000000000000000000000000000000/0000000000000000000000000000000000000000: no such file or directory
+[2023-11-30 10:48:20] [error] key_store_passphrase.go:136 dpchain/crypto/keys.decryptKeyFromFile stat accounts/0000000000000000000000000000000000000000/0000000000000000000000000000000000000000: no such file or directory
+[2023-11-30 10:48:40] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 5cd640c7377fa8c9 127.0.0.1:61940 failed checkpoint posthandshake: Connected to self
+[2023-11-30 10:48:40] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 5cd640c7377fa8c9 127.0.0.1:20131 failed checkpoint posthandshake: Connected to self

@@ -1,0 +1,38 @@
+[2023-11-30 10:51:22] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20132)的加密handshake与协议handshake!
+
+[2023-11-30 10:51:22] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:62884的p2p连接请求
+
+[2023-11-30 10:51:22] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:62884)的加密handshake与协议handshake!
+
+[2023-11-30 10:51:22] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:62884)的加密handshake!
+
+[2023-11-30 10:51:22] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:62884 
+
+[2023-11-30 10:51:22] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20132)的加密handshake!
+
+[2023-11-30 10:51:22] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20132 
+
+[2023-11-30 10:51:22] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn e84e816032ac0afc 127.0.0.1:62884 failed checkpoint posthandshake: Connected to self
+[2023-11-30 10:51:22] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn e84e816032ac0afc 127.0.0.1:20132 failed checkpoint posthandshake: Connected to self
+[2023-11-30 10:51:25] [info] separator.go:119 dpchain/core/separator.(*Separator).handlePeer.func1 与节点(5cd640c7377fa8c9b9beeac48be170d6b2b58991641630127d322298fd6878e38932ca20944b045396242b89c89f0d772ea2b335e7298649124ccb30809d91d2)断开separator handshake!
+
+[2023-11-30 10:51:25] [info] whisper.go:221 dpchain/p2p/whisper.(*Whisper).handlePeer.func1 与节点 (3563643634306337333737666138633962396265656163343862653137306436623262353839393136343136333031323764333232323938666436383738653338393332636132303934346230343533393632343262383963383966306437373265613262333335653732393836343931323463636233303830396439316432) 断开 whisper handshake!
+
+[2023-11-30 10:51:25] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-11-30 10:51:25] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-11-30 10:51:25] [warning] synchronization.go:205 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization failed: Couldn't Read the next message from the remote peer (5cd640c7377fa8c9b9beeac48be170d6b2b58991641630127d322298fd6878e38932ca20944b045396242b89c89f0d772ea2b335e7298649124ccb30809d91d2), err:EOF
+
+[2023-11-30 10:51:25] [warning] peer.go:208 dpchain/p2p/server.(*Peer).pingLoop heart beate, ping协程退出
+
+[2023-11-30 10:51:25] [info] server.go:717 dpchain/p2p/server.(*Server).runPeer Remove Protocal peer (NodeID:3563643634306337333737666138633962396265656163343862653137306436623262353839393136343136333031323764333232323938666436383738653338393332636132303934346230343533393632343262383963383966306437373265613262333335653732393836343931323463636233303830396439316432) (srcIPAddr:127.0.0.1:20132) (destIPAddr:127.0.0.1:61624) ,err:Network error
+
+[2023-11-30 10:51:25] [error] dial.go:217 dpchain/p2p/server.(*dialTask).Do dial error: dial tcp 127.0.0.1:20131: connect: connection refused
+[2023-11-30 10:51:25] [warning] separator.go:272 dpchain/core/separator.(*Separator).DoBind Separator Construct: (1) nodes unable to establish P2P communication due to exceptions
+[2023-11-30 10:51:25] [info] separator.go:275 dpchain/core/separator.(*Separator).DoBind 查询到的断连节点: NodeID (5cd640c7377fa8c9b9beeac48be170d6b2b58991641630127d322298fd6878e38932ca20944b045396242b89c89f0d772ea2b335e7298649124ccb30809d91d2) , NetID (net0)
+
+[2023-11-30 10:51:25] [info] separator.go:383 dpchain/core/separator.(*Separator).TidyDialBook 删除与节点 (5cd640c7377fa8c9b9beeac48be170d6b2b58991641630127d322298fd6878e38932ca20944b045396242b89c89f0d772ea2b335e7298649124ccb30809d91d2) 的静态连接 
+
+[2023-11-30 10:51:25] [info] separator.go:347 dpchain/core/separator.(*Separator).MakeDialBook separator层: 位于unAdded集合中的节点nodeID: 5cd640c7377fa8c9b9beeac48be170d6b2b58991641630127d322298fd6878e38932ca20944b045396242b89c89f0d772ea2b335e7298649124ccb30809d91d2
+

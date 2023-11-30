@@ -1,0 +1,20 @@
+{
+"AccountsDir": "./accounts",
+"BlockDBPath": "./database/blockchain",
+"BootstrapNodesFilePath": "./booters/booter.txt",
+"CentralConfigMode": false,
+"ContractEngine": "DEMO_PIPE_CONTRACT_NAME",
+"DperKeyAddress": "9d3525bd98f62e2e16b4193e81a1fa2c2daf2260",
+"DperPrivateKey": "",
+"DperRole": "Follower",
+"ListenAddress": "127.0.0.1:20133",
+"MaxPeerNum": 20,
+"MemoryDBMode": false,
+"NATKind": "Any",
+"NewAddressMode": false,
+"RemoteEnginePipeName": "/tmp/mypipename20332.sock",
+"RemoteSupportPipeName": "/tmp/mypipename20232.sock",
+"ServerName": "dper",
+"StorageDBPath": "./database/storage",
+"SubNetName": "net0"
+}

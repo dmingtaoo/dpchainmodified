@@ -1,0 +1,19 @@
+{
+    "PeerCount":3,
+    "NetCount":2,
+    "Peers":[
+    {
+        "Role":2,    
+        "NetID":"testnet1"
+    },
+    {
+        "Role":2,
+        "NetID":"testnet2"
+    },
+    {
+        "Role":3,
+        "NetID":"testnet1"
+    }
+    ]
+
+}
