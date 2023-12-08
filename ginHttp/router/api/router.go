@@ -49,14 +49,17 @@ func InitRouter(bs *api.BlockService, ds *api.DperService, ns *api.NetWorkServic
 		dper.POST("/solidCall", SolidCall(ds))
 		dper.POST("/softInvoke", SoftInvoke(ds))
 
-
-		dper.POST("/vcReturn", VcReturn(ds))//just for scene 3, when sp request ue's signature
-		dper.POST("/send/:destinationPort", Send(ds))
+		dper.POST("/sendvcrequest/:destinationPort", SendVCrequest(ds)) //just for scene 3, when sp request ue's signature
+		dper.POST("/sendvc/:destinationPort", SendVC(ds))               //just for scene 3, when sp request ue's signature
+		// dper.POST("/askforvc/:destinationPort", AskForVC(ds))
 		dper.POST("/sendrandom/:destinationPort", SendRandom(ds))
 		dper.POST("/signaturereturn", SignatureReturn(ds))
 		dper.POST("/signvalid", SignValid(ds))
-
-
+		dper.POST("/vcreceive", VCReceive(ds))
+		dper.POST("/vcvalid", VCValid(ds))
+		dper.POST("/datarequest/:destinationPort", DataRequest(ds))
+		dper.POST("/datasend/:destinationPort", DataSend(ds))
+		//  dper.POST("/datasendtest", DataSendtest(ds))
 
 		dper.POST("/softInvokeQuery", SoftInvokeQuery(ds))
 		dper.POST("/publishTx", PublishTx(ds))

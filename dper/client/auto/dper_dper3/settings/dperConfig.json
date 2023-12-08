@@ -4,7 +4,7 @@
 "BootstrapNodesFilePath": "./booters/booter.txt",
 "CentralConfigMode": false,
 "ContractEngine": "DEMO_PIPE_CONTRACT_NAME",
-"DperKeyAddress": "9d3525bd98f62e2e16b4193e81a1fa2c2daf2260",
+"DperKeyAddress": "f5bd17415c467039a442e9a5c871a74c819cd97a",
 "DperPrivateKey": "",
 "DperRole": "Follower",
 "ListenAddress": "127.0.0.1:20133",

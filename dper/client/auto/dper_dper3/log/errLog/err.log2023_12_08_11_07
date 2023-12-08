@@ -1,0 +1,29 @@
+[2023-12-08 11:07:06] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn da42f17a8021ed2a 127.0.0.1:53007 failed checkpoint posthandshake: Connected to self
+[2023-12-08 11:07:06] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn da42f17a8021ed2a 127.0.0.1:20133 failed checkpoint posthandshake: Connected to self
+[2023-12-08 11:07:38] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn da42f17a8021ed2a 127.0.0.1:53199 failed checkpoint posthandshake: Connected to self
+[2023-12-08 11:07:38] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn da42f17a8021ed2a 127.0.0.1:20133 failed checkpoint posthandshake: Connected to self
+[2023-12-08 11:07:49] [warning] synchronization.go:205 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization failed: Couldn't Read the next message from the remote peer (f4124d176a5f5f8caa73746bcbf394e9a0ff64984e4aac4fdd029140eaca9f4219a36e11344ed4b6f7b6799c91100d7c0da3373f6dc2cd0871194834d6870d00), err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:208 dpchain/p2p/server.(*Peer).pingLoop heart beate, ping协程退出
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [error] dial.go:217 dpchain/p2p/server.(*dialTask).Do dial error: dial tcp 127.0.0.1:20132: connect: connection refused
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [warning] synchronization.go:205 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization failed: Couldn't Read the next message from the remote peer (31d981866fcafb83f4a92dc5636564f161a9940e063c96b0d8109174459cea4a89407ba20a7725aee1ab9e573f401496c3c498acd1315ec8ebac19999cb14491), err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:208 dpchain/p2p/server.(*Peer).pingLoop heart beate, ping协程退出
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [error] dial.go:217 dpchain/p2p/server.(*dialTask).Do dial error: dial tcp 127.0.0.1:20131: connect: connection refused
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:208 dpchain/p2p/server.(*Peer).pingLoop heart beate, ping协程退出
+
+[2023-12-08 11:07:49] [error] dial.go:217 dpchain/p2p/server.(*dialTask).Do dial error: dial tcp 127.0.0.1:20130: connect: connection refused

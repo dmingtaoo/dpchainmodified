@@ -1,5 +1,5 @@
 {
-"BooterKeyAddress": "8e626f6e175ef08846df7ebc78f14f13e21e4ae1",
+"BooterKeyAddress": "98039527d023f3cea8505676957919f4d08480ac",
 "BootstrapNodesFilePath": "./booters/booter.txt",
 "CentralConfigMode": false,
 "KeyStoreDir": "./booterKeyStore",

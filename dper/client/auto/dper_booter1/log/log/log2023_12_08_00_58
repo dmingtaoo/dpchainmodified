@@ -1,0 +1,7 @@
+[2023-12-08 00:58:34] [info] dperClient.go:18 main.main [Dper] Dper Client running in PID: 49489  PPID: 49380 
+
+[2023-12-08 00:58:35] [info] server.go:322 dpchain/p2p/server.(*Server).Start P2P: Prepare for Starting Server...
+
+[2023-12-08 00:58:36] [info] whisper.go:177 dpchain/p2p/whisper.(*Whisper).Start P2P: Whisper started
+
+[2023-12-08 00:58:36] [info] server.go:578 dpchain/p2p/server.(*Server).listenLoop Listening on:127.0.0.1:20130

@@ -1,0 +1,75 @@
+[2023-12-08 11:07:06] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20133)的加密handshake与协议handshake!
+
+[2023-12-08 11:07:06] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:53007的p2p连接请求
+
+[2023-12-08 11:07:06] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:53007)的加密handshake与协议handshake!
+
+[2023-12-08 11:07:06] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:53007)的加密handshake!
+
+[2023-12-08 11:07:06] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:53007 
+
+[2023-12-08 11:07:06] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20133)的加密handshake!
+
+[2023-12-08 11:07:06] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn da42f17a8021ed2a 127.0.0.1:53007 failed checkpoint posthandshake: Connected to self
+[2023-12-08 11:07:06] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20133 
+
+[2023-12-08 11:07:06] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn da42f17a8021ed2a 127.0.0.1:20133 failed checkpoint posthandshake: Connected to self
+[2023-12-08 11:07:38] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20133)的加密handshake与协议handshake!
+
+[2023-12-08 11:07:38] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:53199的p2p连接请求
+
+[2023-12-08 11:07:38] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:53199)的加密handshake与协议handshake!
+
+[2023-12-08 11:07:38] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:53199)的加密handshake!
+
+[2023-12-08 11:07:38] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:53199 
+
+[2023-12-08 11:07:38] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20133)的加密handshake!
+
+[2023-12-08 11:07:38] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20133 
+
+[2023-12-08 11:07:38] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn da42f17a8021ed2a 127.0.0.1:53199 failed checkpoint posthandshake: Connected to self
+[2023-12-08 11:07:38] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn da42f17a8021ed2a 127.0.0.1:20133 failed checkpoint posthandshake: Connected to self
+[2023-12-08 11:07:49] [warning] synchronization.go:205 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization failed: Couldn't Read the next message from the remote peer (f4124d176a5f5f8caa73746bcbf394e9a0ff64984e4aac4fdd029140eaca9f4219a36e11344ed4b6f7b6799c91100d7c0da3373f6dc2cd0871194834d6870d00), err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:208 dpchain/p2p/server.(*Peer).pingLoop heart beate, ping协程退出
+
+[2023-12-08 11:07:49] [info] separator.go:119 dpchain/core/separator.(*Separator).handlePeer.func1 与节点(f4124d176a5f5f8caa73746bcbf394e9a0ff64984e4aac4fdd029140eaca9f4219a36e11344ed4b6f7b6799c91100d7c0da3373f6dc2cd0871194834d6870d00)断开separator handshake!
+
+[2023-12-08 11:07:49] [info] whisper.go:221 dpchain/p2p/whisper.(*Whisper).handlePeer.func1 与节点 (6634313234643137366135663566386361613733373436626362663339346539613066663634393834653461616334666464303239313430656163613966343231396133366531313334346564346236663762363739396339313130306437633064613333373366366463326364303837313139343833346436383730643030) 断开 whisper handshake!
+
+[2023-12-08 11:07:49] [info] server.go:717 dpchain/p2p/server.(*Server).runPeer Remove Protocal peer (NodeID:6634313234643137366135663566386361613733373436626362663339346539613066663634393834653461616334666464303239313430656163613966343231396133366531313334346564346236663762363739396339313130306437633064613333373366366463326364303837313139343833346436383730643030) (srcIPAddr:127.0.0.1:55898) (destIPAddr:127.0.0.1:20132) ,err:Network error
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [error] dial.go:217 dpchain/p2p/server.(*dialTask).Do dial error: dial tcp 127.0.0.1:20132: connect: connection refused
+[2023-12-08 11:07:49] [info] separator.go:119 dpchain/core/separator.(*Separator).handlePeer.func1 与节点(31d981866fcafb83f4a92dc5636564f161a9940e063c96b0d8109174459cea4a89407ba20a7725aee1ab9e573f401496c3c498acd1315ec8ebac19999cb14491)断开separator handshake!
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [warning] synchronization.go:205 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization failed: Couldn't Read the next message from the remote peer (31d981866fcafb83f4a92dc5636564f161a9940e063c96b0d8109174459cea4a89407ba20a7725aee1ab9e573f401496c3c498acd1315ec8ebac19999cb14491), err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:208 dpchain/p2p/server.(*Peer).pingLoop heart beate, ping协程退出
+
+[2023-12-08 11:07:49] [info] whisper.go:221 dpchain/p2p/whisper.(*Whisper).handlePeer.func1 与节点 (3331643938313836366663616662383366346139326463353633363536346631363161393934306530363363393662306438313039313734343539636561346138393430376261323061373732356165653161623965353733663430313439366333633439386163643133313565633865626163313939393963623134343931) 断开 whisper handshake!
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [info] server.go:717 dpchain/p2p/server.(*Server).runPeer Remove Protocal peer (NodeID:3331643938313836366663616662383366346139326463353633363536346631363161393934306530363363393662306438313039313734343539636561346138393430376261323061373732356165653161623965353733663430313439366333633439386163643133313565633865626163313939393963623134343931) (srcIPAddr:127.0.0.1:20133) (destIPAddr:127.0.0.1:55881) ,err:Network error
+
+[2023-12-08 11:07:49] [error] dial.go:217 dpchain/p2p/server.(*dialTask).Do dial error: dial tcp 127.0.0.1:20131: connect: connection refused
+[2023-12-08 11:07:49] [info] separator.go:119 dpchain/core/separator.(*Separator).handlePeer.func1 与节点(a226effe746e5dd96a7a4e210f4ff6d96867aa07256f4a1dfd3e6fe54d2ef43d1f43ee1bb54607e8eaa0fa14e5bd795380e04ec75f3ec53f127182dab52bfe2f)断开separator handshake!
+
+[2023-12-08 11:07:49] [info] whisper.go:221 dpchain/p2p/whisper.(*Whisper).handlePeer.func1 与节点 (6132323665666665373436653564643936613761346532313066346666366439363836376161303732353666346131646664336536666535346432656634336431663433656531626235343630376538656161306661313465356264373935333830653034656337356633656335336631323731383264616235326266653266) 断开 whisper handshake!
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:319 dpchain/p2p/server.(*Peer).startProtocols.func1 协议handshake, 协议Run函数错误,err:EOF
+
+[2023-12-08 11:07:49] [warning] peer.go:208 dpchain/p2p/server.(*Peer).pingLoop heart beate, ping协程退出
+
+[2023-12-08 11:07:49] [info] server.go:717 dpchain/p2p/server.(*Server).runPeer Remove Protocal peer (NodeID:6132323665666665373436653564643936613761346532313066346666366439363836376161303732353666346131646664336536666535346432656634336431663433656531626235343630376538656161306661313465356264373935333830653034656337356633656335336631323731383264616235326266653266) (srcIPAddr:127.0.0.1:20133) (destIPAddr:127.0.0.1:55875) ,err:Network error
+
+[2023-12-08 11:07:49] [error] dial.go:217 dpchain/p2p/server.(*dialTask).Do dial error: dial tcp 127.0.0.1:20130: connect: connection refused
