@@ -1,0 +1,26 @@
+[2023-12-12 14:08:21] [info] consensusPromoter.go:456 dpchain/core/consensus.(*ConsensusPromoter).PublishTransactions [TPBFT Consensus] Current Consensus Node (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) has published new transactions (count:1) and broadcast within lower group (net0)!
+
+[2023-12-12 14:08:22] [info] consensusPromoter.go:253 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Current Consensus Node (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) has receive pre-prepare Message from Leader (8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d) within group (net0)
+
+[2023-12-12 14:08:22] [info] consensusPromoter.go:256 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Leader (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) doesn't have corresponding roundHandler, Waiting for creation....
+
+[2023-12-12 14:08:22] [info] consensusPromoter.go:302 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: The new roundHandler (roundID:7c194c1f8fafa3151939fab69d010ad80ff92d95ad67ca3cbfde70c778887c6a) has been created and being running
+
+[2023-12-12 14:08:22] [info] consensusPromoter.go:249 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus failed: Leader (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) doesn't have corresponding roundHandler, Cann't process messages of non-StatePrePrepare Msg!
+
+[2023-12-12 14:08:22] [info] roundHandler.go:286 dpchain/core/consensus.(*roundHandler).SendPrepareMsg [TPBFT Consensus] Lower Channel: Current Consensus Node (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) has broadcast prepareMsg within roundID (7c194c1f8fafa3151939fab69d010ad80ff92d95ad67ca3cbfde70c778887c6a)
+
+[2023-12-12 14:08:22] [info] roundHandler.go:161 dpchain/core/consensus.(*roundHandler).Start [TPBFT Consensus] Lower Channel: roudHandler with round ID: 7c194c1f8fafa3151939fab69d010ad80ff92d95ad67ca3cbfde70c778887c6a starts to running!
+
+[2023-12-12 14:08:22] [info] roundHandler.go:113 dpchain/core/consensus.(*roundHandler).processMsg [TPBFT Consensus] Lower Consensus: Node (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) receive validated PrepareMsg from Node (e94da3466937f48f1ef393986df9f121a014c37038577f5cdf674f1c65955d874a17f66217da39ad30501c5b81385f3078c717278944e3036420d41103c64c5b) and has added it into roundHandler.prepareMsgPool
+
+[2023-12-12 14:08:22] [info] roundHandler.go:200 dpchain/core/consensus.(*roundHandler).Do [TPBFT Consensus] Lower Channel: Node (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) has completed the prepare phase consensus, validOrder:[1]
+
+[2023-12-12 14:08:22] [info] roundHandler.go:113 dpchain/core/consensus.(*roundHandler).processMsg [TPBFT Consensus] Lower Consensus: Node (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) receive validated PrepareMsg from Node (24adf9438121b071fe2b8bf65265838f5c4e1dc333460305f4be104ba91281c6dac6459b18595a1c8bbf1944282d0f405a03e35d0757d389adebdf547ec1ee37) and has added it into roundHandler.prepareMsgPool
+
+[2023-12-12 14:08:22] [info] tpbt_common.go:277 dpchain/core/consensus.(*Ctpbft).TidyTransactions [TPBFT Consensus] Ctpbft: Leader (b5ebe2af97efe7307cba4f5c53a4860637fcabde) Tidy candidateBlock successfully, blockID:6af23f7acac5a2fda39a270ef79e1cd884c31361c8c81c4febaf6810d1a3edca, txSum:1
+
+[2023-12-12 14:08:22] [info] roundHandler.go:238 dpchain/core/consensus.(*roundHandler).Do [TPBFT Consensus] Lower Channel: Node (0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f) has completed the tidy phase consensus and has sent CommitMsg to the Leader (8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d)
+
+[2023-12-12 14:08:22] [info] roundHandler.go:170 dpchain/core/consensus.(*roundHandler).Stop.func1 [TPBFT Consensus] Lower Channel: roudHandler with round ID: 7c194c1f8fafa3151939fab69d010ad80ff92d95ad67ca3cbfde70c778887c6a stop!
+

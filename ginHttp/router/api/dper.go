@@ -21,7 +21,7 @@ import (
 	"net/url"
 	"reflect"
 	"sync"
-
+	"strings"
 	"github.com/astaxie/beego/validation"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
@@ -39,6 +39,17 @@ type VCrequest struct {
 	SubjectAddress string `json:"address"`    // subject address
 }
 
+type Transfer struct{
+	Recipient       string `json:"recipient"`    // SP2 DID
+	RecipientPurpose       string `json:"purpose"`    // 用途
+	RecipientAddress string `json:"recipientaddress"`    // subject address
+	DonorSignature 		string `json:"signature"`  // UE Signature
+	Timestamp       string `json:"timestamp"`  // time
+	
+}
+func removeSpaces(str string) string {
+	return strings.ReplaceAll(str, " ", "")
+}
 type VC struct {
 	Identifier     string `json:"identifier"` // VC ID
 	Subject        string `json:"subject"`    // SP DID
@@ -47,9 +58,11 @@ type VC struct {
 	Purpose        string `json:"purpose"`    // 用途
 	Signature      string `json:"signature"`  // UE Signature
 	Reassign       string `json:"reassign"`   // 是否允许二次转让
-	IssuerAddress  string `json:"address"`    // issuer address
-	SubjectAddress string `json:"address"`    // subject address
+	IssuerAddress  string `json:"IssuerAddress"`    // issuer address
+	SubjectAddress string `json:"SubjectAddress"`    // subject address
+	Transfer       Transfer `json:"transfer"`    // subject address
 }
+
 type DataStruct struct {
 	DID    string `json:"did"`
 	Name   string `json:"name"`
@@ -58,22 +71,22 @@ type DataStruct struct {
 }
 
 // FindDataInFile 从指定的 JSON 文件中查找特定的 DID 并返回对应的数据
-func FindDataInFile(filename, did string) (string, error) {
-	// 从文件中加载数据
+func FindDataInFile(did string) (string, error) {
+	filename := "/Users/dengmingtao/Documents/GitHub/dpchain/ginHttp/router/api/data.json" // 假设文件在当前目录
 	var data []DataStruct
+
 	file, err := ioutil.ReadFile(filename)
 	if err != nil {
 		return "", fmt.Errorf("error reading file: %v", err)
 	}
+
 	err = json.Unmarshal(file, &data)
 	if err != nil {
 		return "", fmt.Errorf("error unmarshalling data: %v", err)
 	}
 
-	// 查找特定的 DID
 	for _, d := range data {
 		if d.DID == did {
-			// 将找到的数据转换为 JSON 字符串
 			result, err := json.Marshal(d)
 			if err != nil {
 				return "", fmt.Errorf("error marshalling data: %v", err)
@@ -83,6 +96,29 @@ func FindDataInFile(filename, did string) (string, error) {
 	}
 	return "", fmt.Errorf("DID not found")
 }
+func ResultToRecipientAddress(byteSlices [][]byte) (string, error) {
+	var resultString string
+	for _, b := range byteSlices {
+		resultString += string(b)
+	}
+
+	// 解析 JSON 字符串
+	var data map[string]interface{}
+	err := json.Unmarshal([]byte(resultString), &data)
+	if err != nil {
+		return "failed", err
+	}
+
+	// 提取 RecipientAddress
+	// 注意这里的字段名称要与 JSON 字符串中的一致
+	recipientAddress, ok := data["RecipientAddress"].(string)
+	if !ok {
+		return "recipientaddress not found", nil
+	}
+
+	return recipientAddress, nil
+}
+
 func ResultToSubjectAddress(byteSlices [][]byte) (string, error) {
 	var resultString string
 	for _, b := range byteSlices {
@@ -104,6 +140,39 @@ func ResultToSubjectAddress(byteSlices [][]byte) (string, error) {
 
 	return resultString, nil
 }
+
+func ResultToAddress(result [][]byte) (string, error) {
+    // 将 result ([][]byte) 转换为一个字符串
+    var resultString string
+    for _, b := range result {
+        resultString += string(b)
+    }
+
+    // 打印结果字符串以进行调试
+    fmt.Println("Result string:", resultString)
+
+    // 定义地址前缀
+    addressPrefix := "address:"
+    // 寻找地址的开始位置
+    startIndex := strings.Index(resultString, addressPrefix)
+    if startIndex == -1 {
+        return "", fmt.Errorf("address prefix not found in result")
+    }
+
+    // 获取地址开始的位置（跳过前缀）
+    startIndex += len(addressPrefix)
+    // 获取地址结束的位置（假设地址结束于字符串结束或闭合方括号前）
+    endIndex := len(resultString)
+    if endBracket := strings.Index(resultString[startIndex:], "]"); endBracket != -1 {
+        endIndex = startIndex + endBracket
+    }
+
+    // 提取地址
+    address := resultString[startIndex:endIndex]
+    return address, nil
+}
+
+
 func ResultToIssuer(byteSlices [][]byte) (string, error) {
 	var resultString string
 	for _, b := range byteSlices {
@@ -117,14 +186,48 @@ func ResultToIssuer(byteSlices [][]byte) (string, error) {
 		return "failed", err
 	}
 	// 提取 SubjectAddress
-	Issuer, ok := data["Issuer"].(string)
+	issuer, ok := data["issuer"].(string)
 	if !ok {
-		return "Issuer not found", nil
+		return "issuer not found", nil
 	}
-	resultString = Issuer
+	resultString = issuer
 
 	return resultString, nil
 }
+
+func ResultToVC(byteSlices [][]byte) (string, error) {
+	// 将字节切片合并成一个字符串
+	var resultString string
+	for _, b := range byteSlices {
+		resultString += string(b)
+	}
+
+	// 解码 JSON 字符串
+	var data map[string]interface{}
+	err := json.Unmarshal([]byte(resultString), &data)
+	if err != nil {
+		return "", err // 如果解码失败，则返回错误
+	}
+
+	// 从 JSON 数据中提取所需的字段
+	identifier, _ := data["identifier"].(string)
+	subject, _ := data["subject"].(string)
+	issuer, _ := data["issuer"].(string)
+	validity, _ := data["validity"].(string)
+	purpose, _ := data["purpose"].(string)
+	signature, _ := data["signature"].(string)
+	reassign, _ := data["reassign"].(string)
+	issuerAddress, _ := data["IssuerAddress"].(string)
+	subjectAddress, _ := data["SubjectAddress"].(string)
+
+	// 格式化提取的字段到一个字符串
+	formattedString := fmt.Sprintf("Identifier: %s, Subject: %s, Issuer: %s, Validity: %s, Purpose: %s, Signature: %s, Reassign: %s, IssuerAddress: %s, SubjectAddress: %s", 
+		identifier, subject, issuer, validity, purpose, signature, reassign, issuerAddress, subjectAddress)
+
+	return formattedString, nil
+}
+
+
 func BackAccountList(ds *api.DperService) func(*gin.Context) {
 	return func(c *gin.Context) {
 		loglogrus.Log.Infof("Http: Get user request -- BackAccountList\n")
@@ -603,24 +706,7 @@ func SendVCrequest(ds *api.DperService) func(*gin.Context) {
 	}
 }
 
-func VCReceive(ds *api.DperService) func(*gin.Context) {
-	return func(c *gin.Context) {
-		appG := app.Gin{c}
 
-		// 从请求中获取VC字符串
-		vcrequestString := c.PostForm("vcrequest")
-		if vcrequestString == "" {
-			appG.Response(http.StatusBadRequest, e.ERROR, "No VCrequest data received")
-			return
-		}
-
-		// 打印接收到的VC字符串
-		fmt.Printf("Received VC String: %s\n", vcrequestString)
-
-		// 返回响应给调用方
-		appG.Response(http.StatusOK, e.SUCCESS, fmt.Sprintf("Received VCrequest: %s", vcrequestString))
-	}
-}
 
 func SendVC(ds *api.DperService) func(*gin.Context) {
 	return func(c *gin.Context) {
@@ -724,66 +810,6 @@ func VCValid(ds *api.DperService) func(*gin.Context) {
 	}
 }
 
-func SendRandom(ds *api.DperService) func(*gin.Context) {
-	return func(c *gin.Context) {
-		appG := app.Gin{c}
-		// 获取目标端口和消息内容
-		destinationPort := c.Param("destinationPort")
-
-		// buff := make([]byte, 10) // 创建一个长度为10的缓冲区
-		// _, err := randentropy.Reader.Read(buff)
-		// if err != nil {
-		// 	panic(err)
-		// }
-		// message := hex.EncodeToString(buff)
-		message := c.PostForm("message")
-		// 构造目标 URL
-		destinationURL := fmt.Sprintf("http://127.0.0.1:%s/dper/signaturereturn", destinationPort)
-
-		// 发送 HTTP POST 请求
-		resp, err := http.PostForm(destinationURL, url.Values{"message": {message}})
-		if err != nil {
-			appG.Response(http.StatusInternalServerError, e.ERROR, err)
-			return
-		}
-
-		defer resp.Body.Close()
-
-		// 读取响应
-		responseBody, err := ioutil.ReadAll(resp.Body)
-		if err != nil {
-			appG.Response(http.StatusInternalServerError, e.ERROR, err)
-			return
-		}
-
-		// 返回响应给调用方
-		c.JSON(http.StatusOK, gin.H{
-			"message": fmt.Sprintf("Message: %s,response: %s", message, string(responseBody)),
-		})
-	}
-}
-
-func SignatureReturn(ds *api.DperService) func(*gin.Context) {
-	return func(c *gin.Context) {
-		// 解析消息内容
-		message := c.PostForm("message")
-		// 获取签名和事务ID
-		signature, err := ds.SignMessage(message)
-		if err != nil {
-			c.JSON(http.StatusOK, gin.H{
-				"status": "error",
-				"error":  err.Error(),
-			})
-			return
-		} else {
-			c.JSON(http.StatusOK, gin.H{
-				"status":    "success",
-				"signature": fmt.Sprintf("%s", signature),
-			})
-		}
-
-	}
-}
 
 func SignValid(ds *api.DperService) func(*gin.Context) {
 	return func(c *gin.Context) {
@@ -805,15 +831,9 @@ func SignValid(ds *api.DperService) func(*gin.Context) {
 			return
 		} else {
 			if ok == true {
-				c.JSON(http.StatusOK, gin.H{
-					"status": "success",
-					"valid":  "The signature is valid!",
-				})
+				c.JSON(http.StatusOK, gin.H{"status": "success",})
 			} else if ok == false {
-				c.JSON(http.StatusOK, gin.H{
-					"status": "success",
-					"valid":  "The signature is not valid!",
-				})
+				c.JSON(http.StatusOK, gin.H{"status": "fail",})
 			}
 		}
 
@@ -861,6 +881,7 @@ func DataRequest(ds *api.DperService) func(*gin.Context) {
 		})
 	}
 }
+
 func DataSend(ds *api.DperService) func(*gin.Context) {
 	return func(c *gin.Context) {
 		ID := c.PostForm("ID")
@@ -889,7 +910,7 @@ func DataSend(ds *api.DperService) func(*gin.Context) {
 		}
 
 		if ok {
-			data, err := FindDataInFile("data.json", issuer)
+			data, err := FindDataInFile(issuer)
 			if err != nil {
 				c.JSON(http.StatusInternalServerError, gin.H{"status": "error", "error": err.Error()})
 				return
@@ -904,92 +925,349 @@ func DataSend(ds *api.DperService) func(*gin.Context) {
 		}
 	}
 }
+func DataRequest2(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		appG := app.Gin{c}
+		// 获取目标端口和消息内容
+		destinationPort := c.Param("destinationPort")
+		ID := c.PostForm("ID")
 
-// func Receive(ds *api.DperService) func(*gin.Context) {
-// 	return func(c *gin.Context) {
-// 		destinationPort := c.Param("destinationPort")
+		// 签名消息
+		signature, err := ds.SignMessage(ID)
+		if err != nil {
+			appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			return
+		}
+		// 构造目标 URL
+		destinationURL := fmt.Sprintf("http://127.0.0.1:%s/dper/datasend2", destinationPort)
 
-// 		// 解析消息内容
-// 		message := c.PostForm("message")
+		// 发送 HTTP POST 请求
+		resp, err := http.PostForm(destinationURL, url.Values{
+			"ID":        {ID},
+			"signature": {signature},
+		})
+		if err != nil {
+			appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			return
+		}
+		defer resp.Body.Close()
 
-// 		// 获取签名和事务ID
-// 		signature, TxID, err := ds.SignatureReturn(message)
-// 		if err != nil {
-// 			c.JSON(http.StatusOK, gin.H{
-// 				"status": "error",
-// 				"error":  err.Error(),
-// 			})
-// 			return
-// 		} else {
-// 			c.JSON(http.StatusOK, gin.H{
-// 				"status":    "success",
-// 				"message":   message,
-// 				"TxID":      fmt.Sprintf("%x", TxID),
-// 				"signature": fmt.Sprintf("%x", signature),
-// 			})
-// 		}
+		// 读取响应
+		responseBody, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			return
+		}
 
-// 		// 打印收到的消息和目标端口
-// 		fmt.Printf("Received message: %s, destination port: %s\n", message, destinationPort)
-// 	}
-// }
-// func SendVC(ds *api.DperService) func(*gin.Context) {
-// 	return func(c *gin.Context) {
-// 		appG := app.Gin{c}
+		// 返回响应给调用方
+		c.JSON(http.StatusOK, gin.H{
+			"message": fmt.Sprintf("ID: %s, response: %s", ID, string(responseBody)),
+		})
+	}
+}
+func DataSend2(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		ID := c.PostForm("ID")
+		signature := c.PostForm("signature")
+		// 合约调用逻辑...
+		contractName := "DID::SPECTRUM::TRADE"
+		functionName := "GetVC"
+		args := ID
+		commandStr := "invoke " + contractName + " " + functionName + " -args " + args
+		receipt, err := ds.SoftInvoke(commandStr)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"status": "error", "error": err.Error()})
+			return
+		}
 
-// 		// 从请求中获取数据
-// 		Issuer := c.PostForm("Issuer")
-// 		Subject := c.PostForm("Subject")
-// 		validity := c.PostForm("validity")
+		subjectAddress, _ := ResultToRecipientAddress(receipt.Result)
+		issuer, _ := ResultToIssuer(receipt.Result)
+		msg := crypto.Sha3Hash([]byte(ID))
+		sig := common.Hex2Bytes(signature)
+		add := common.HexToAddress(subjectAddress)
+		ok, err := crypto.SignatureValid(add, sig, msg)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"status": "error", "error": err.Error()})
+			return
+		}
 
-// 		// 签名消息
-// 		signature, err := ds.SignMessage("GETDATA")
-// 		if err != nil {
-// 			appG.Response(http.StatusInternalServerError, e.ERROR, err)
-// 			return
-// 		}
+		if ok {
+			data, err := FindDataInFile(issuer)
+			if err != nil {
+				c.JSON(http.StatusInternalServerError, gin.H{"status": "error", "error": err.Error()})
+				return
+			}
+			// 直接返回结果给调用方
+			c.JSON(http.StatusOK, gin.H{
+				"status": "success",
+				"data":   data,
+			})
+		} else {
+			c.JSON(http.StatusOK, gin.H{"status": "error", "error": "Signature validation failed"})
+		}
+	}
+}
+func GetAddress(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		DID := c.PostForm("DID")
+		// 合约调用逻辑...
+		contractName := "DID::SPECTRUM::TRADE"
+		functionName := "GetAddress"
+		args := DID
+		commandStr := "invoke " + contractName + " " + functionName + " -args " + args
+		receipt, err := ds.SoftInvoke(commandStr)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"status": "error", "error": err.Error()})
+			return
+		}
+		Address, err := ResultToAddress(receipt.Result)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"status": "error", "error": err.Error()})
+			return
+		} else {
+			c.JSON(http.StatusOK, gin.H{"address":Address})
+		}
+	}
+}
 
-// 		// 构造VC
-// 		vc := Credential{
-// 			Identifier: "hahaha",
-// 			Subject:    Subject,
-// 			Issuer:     Issuer,
-// 			Validity:   validity,
-// 			Message:    "GETDATA",
-// 			Signature:  signature,
 
-// 		}
+func SignatureReturn(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		// 解析消息内容
+		message := c.PostForm("message")
+		// 获取签名和事务ID
+		signature, err := ds.SignMessage(message)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{
+				"status": "error",
+				"error":  err.Error(),
+			})
+			return
+		} else {
+			c.JSON(http.StatusOK, gin.H{"signature": signature,})
+		}
 
-// 		// 将VC转换为字符串
-// 		vcString := fmt.Sprintf("Identifier:%s,Subject:%s,Issuer:%s,Validity:%s,Signature:%s,Message:%s",
-// 			vc.Identifier, vc.Subject, vc.Issuer, vc.Validity, vc.Signature, vc.Message)
+	}
+}
 
-// 		// 返回响应给调用方
-//         c.JSON(http.StatusOK, gin.H{
-//             "response": vcString, // 或者是处理结果
-//         })
-// 	}
-// }
-// func DataSendtest(ds *api.DperService) func(*gin.Context) {
-// 	return func(c *gin.Context) {
-// 		// 解析消息内容
-// 		appG := app.Gin{c}
-// 		// 获取目标端口和消息内容
-// 		ID := c.PostForm("ID")
-// 		//合约调用
-// 		contractName := "DID::SPECTRUM::TRADE"
-// 		functionName := "GetVC"
-// 		args := ID
-// 		commandStr := "invoke " + contractName + " " + functionName + " -args " + args
-// 		receipt, err := ds.SoftInvoke(commandStr)
-// 		if err != nil {
-// 			fmt.Println("Error parsing JSON:", err)
-// 			return
-// 		}
-// 		// 将结果字节切片转换为字符串切片，然后合并为单个字符串
-// 		var resultString string
+func SignatureReturn2(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		// 解析消息内容
+		message := c.PostForm("message")
+		// 获取签名和事务ID
+		address:=ds.CurrentAccount()
+		signature, err := ds.SignMessage(message)
+		if err != nil {
+			c.JSON(http.StatusOK, gin.H{
+				"status": "error",
+				"error":  err.Error(),
+			})
+			return
+		} else {
+			c.JSON(http.StatusOK, gin.H{
+				"signature": signature,
+				"address":	address,
+			})
+		}
 
-// 		// 返回 SubjectAddress
-// 		appG.Response(http.StatusOK, e.SUCCESS, subjectAddress)
-// 	}
-// }
+	}
+}
+
+func SendRandom(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		appG := app.Gin{c}
+		// 获取目标端口和消息内容
+		destinationPort := c.Param("destinationPort")
+		message := c.PostForm("message")
+		// 构造目标 URL
+		destinationURL := fmt.Sprintf("http://127.0.0.1:%s/dper/signaturereturn", destinationPort)
+
+		// 发送 HTTP POST 请求
+		resp, err := http.PostForm(destinationURL, url.Values{"message": {message}})
+		if err != nil {
+			appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			return
+		}
+
+		defer resp.Body.Close()
+
+		// 读取响应
+		responseBody, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			return
+		}
+		 // 解析 JSON 响应以获取签名
+		 var responseJSON map[string]string
+		 err = json.Unmarshal(responseBody, &responseJSON)
+		 if err != nil {
+			 appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			 return
+		 }
+ 
+		 signature, ok := responseJSON["signature"]
+		 if !ok {
+			 appG.Response(http.StatusInternalServerError, e.ERROR, "Signature not found in response")
+			 return
+		 }
+ 
+		 // 返回响应给调用方
+		 c.JSON(http.StatusOK, gin.H{"signature": signature})
+
+	}
+}
+
+func TransVCrequest(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		appG := app.Gin{c}
+		destinationPort := c.Param("destinationPort")
+
+		// 从请求中获取数据
+		VCID         :=c.PostForm("vcid")
+		Recipient    :=c.PostForm("recipient")
+		RecipientPurpose       :=c.PostForm("recipientpurpose")
+		RecipientAddress :=c.PostForm("recipientaddress")
+
+		//调用合约
+		contractName := "DID::SPECTRUM::TRADE"
+		functionName := "GetVC"
+		args := VCID
+		commandStr := "invoke " + contractName + " " + functionName + " -args " + args
+		receipt, err := ds.SoftInvoke(commandStr)
+		if err != nil {
+			c.JSON(http.StatusInternalServerError, gin.H{"status": "error", "error": err.Error()})
+			return
+		}
+		oldvcstring, err := ResultToVC(receipt.Result)
+		
+		transferString := fmt.Sprintf("%s,VCID:%s,Recipient:%s,RecipientPurpose:%s,RecipientAddress:%s",oldvcstring,VCID,Recipient,RecipientPurpose,RecipientAddress)
+		// 构造目标 URL
+		destinationURL := fmt.Sprintf("http://127.0.0.1:%s/dper/transvc", destinationPort)
+
+		// 准备要发送的数据
+		formData := url.Values{
+			"VCID":{VCID},
+			"transferstring": {transferString},
+		}
+		// 发送 HTTP POST 请求
+		resp, err := http.PostForm(destinationURL, formData)
+		if err != nil {
+			appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			return
+		}
+		defer resp.Body.Close()
+
+		// 读取响应
+		responseBody, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			return
+		}
+		// 返回响应给调用方
+		c.JSON(http.StatusOK, gin.H{
+			"response": string(responseBody),
+		})
+	}
+}
+
+
+func TransVC(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		appG := app.Gin{c}
+
+		// 从请求中获取VC字符串
+		VCID := c.PostForm("VCID")
+		transferString := c.PostForm("transferstring")
+		if transferString == "" {
+			appG.Response(http.StatusBadRequest, e.ERROR, "No VC data received")
+			return
+		}
+
+		signature, _ := ds.SignMessage(VCID)
+		newvcString := fmt.Sprintf("%s,DonorSignature:%s",transferString,signature)
+		str:=removeSpaces(newvcString)
+		// appG.Response(http.StatusOK, e.SUCCESS, transferString)
+		// appG.Response(http.StatusOK, e.SUCCESS, newvcString)
+		appG.Response(http.StatusOK, e.SUCCESS, str)
+		// 调用合约
+		contractName := "DID::SPECTRUM::TRADE"
+		functionName := "ResetVC"
+		args := str
+
+		commandStr := "invoke " + contractName + " " + functionName + " -args " + args
+		receipt, err := ds.SoftInvoke(commandStr)
+		if err != nil {
+			appG.Response(http.StatusOK, e.ERROR, err)
+			return
+		} else {
+			if reflect.DeepEqual(receipt, transactionCheck.CheckResult{}) {
+				appG.Response(http.StatusOK, e.SUCCESS, nil)
+			} else {
+				type ResponseReceipt struct {
+					TxID   string `json:"Transaction ID"`
+					Valid  bool   `json:"Valid"`
+					Result string `json:"Transaction Results"`
+					Delay  string `json:"Consensus Delay"`
+				}
+				var r ResponseReceipt = ResponseReceipt{
+					TxID:   fmt.Sprintf("%x", receipt.TransactionID),
+					Valid:  receipt.Valid,
+					Result: fmt.Sprintf("%s", receipt.Result),
+					Delay:  fmt.Sprintf("%d ms", receipt.Interval.Milliseconds()),
+				}
+				appG.Response(http.StatusOK, e.SUCCESS, r)
+			}
+		}
+	}
+}
+
+func VCReceive(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		appG := app.Gin{c}
+
+		// 从请求中获取VC字符串
+		vcString := c.PostForm("vcrequest")
+		if vcString == "" {
+			appG.Response(http.StatusBadRequest, e.ERROR, "No VCrequest data received")
+			return
+		}
+		// 打印接收到的VC字符串
+		fmt.Printf("Received VC String: %s\n", vcString)
+
+		// 返回响应给调用方
+		appG.Response(http.StatusOK, e.SUCCESS, fmt.Sprintf("Received VCrequest: %s", vcString))
+	}
+}
+func VCReceive2(ds *api.DperService) func(*gin.Context) {
+	return func(c *gin.Context) {
+		appG := app.Gin{c}
+
+		// 从请求中获取VC字符串
+		vcString := c.PostForm("transferstring")
+		if vcString == "" {
+			appG.Response(http.StatusBadRequest, e.ERROR, "No VCrequest data received")
+			return
+		}
+		// 打印接收到的VC字符串
+		fmt.Printf("Received VC String: %s\n", vcString)
+
+		// 返回响应给调用方
+		appG.Response(http.StatusOK, e.SUCCESS, fmt.Sprintf("Received VCrequest: %s", vcString))
+	}
+}
+func StringToMap(str string) (map[string]string, error) {
+    resultMap := make(map[string]string)
+    pairs := strings.Split(str, ",")
+    for _, pair := range pairs {
+        // 找到第一个冒号的位置
+        idx := strings.Index(pair, ":")
+        if idx == -1 {
+            return nil, fmt.Errorf("invalid pair (no colon found): %s", pair)
+        }
+
+        key := pair[:idx]
+        value := pair[idx+1:]
+        resultMap[key] = value
+    }
+    return resultMap, nil
+}

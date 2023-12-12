@@ -1,0 +1,169 @@
+[2023-12-12 14:05:06] [info] dperClient.go:18 main.main [Dper] Dper Client running in PID: 12885  PPID: 12883 
+
+[2023-12-12 14:05:06] [info] server.go:322 dpchain/p2p/server.(*Server).Start P2P: Prepare for Starting Server...
+
+[2023-12-12 14:05:08] [info] whisper.go:177 dpchain/p2p/whisper.(*Whisper).Start P2P: Whisper started
+
+[2023-12-12 14:05:08] [info] server.go:578 dpchain/p2p/server.(*Server).listenLoop Listening on:127.0.0.1:20130
+[2023-12-12 14:05:09] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20131)的加密handshake与协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20132)的加密handshake与协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20130)的加密handshake与协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20133)的加密handshake与协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:63777的p2p连接请求
+
+[2023-12-12 14:05:09] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:63777)的加密handshake与协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:63777)的加密handshake!
+
+[2023-12-12 14:05:09] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:63777 
+
+[2023-12-12 14:05:09] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn b4e9b157eb04a8a3 127.0.0.1:63777 failed checkpoint posthandshake: Connected to self
+[2023-12-12 14:05:09] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20130)的加密handshake!
+
+[2023-12-12 14:05:09] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20130 
+
+[2023-12-12 14:05:09] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn b4e9b157eb04a8a3 127.0.0.1:20130 failed checkpoint posthandshake: Connected to self
+[2023-12-12 14:05:09] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20131)的加密handshake!
+
+[2023-12-12 14:05:09] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20131 
+
+[2023-12-12 14:05:09] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20133)的加密handshake!
+
+[2023-12-12 14:05:09] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20133 
+
+[2023-12-12 14:05:09] [info] server.go:650 dpchain/p2p/server.(*Server).setupConn 下面进行协议handshake ,127.0.0.1:20131 
+
+[2023-12-12 14:05:09] [info] server.go:650 dpchain/p2p/server.(*Server).setupConn 下面进行协议handshake ,127.0.0.1:20133 
+
+[2023-12-12 14:05:09] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20132)的加密handshake!
+
+[2023-12-12 14:05:09] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20132 
+
+[2023-12-12 14:05:09] [info] server.go:659 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20131)的协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:650 dpchain/p2p/server.(*Server).setupConn 下面进行协议handshake ,127.0.0.1:20132 
+
+[2023-12-12 14:05:09] [info] server.go:698 dpchain/p2p/server.(*Server).runPeer Added Protocal peer (NodeID:3866356533663164633131323532356134653231386436616638643332613566316265363532653264613737376466393934666337326535316463356663336662353935323433323061666636383032643435333733376262313238383964613438393234373931343631373038383732326366643132396339333937613764) (srcIPAddr:127.0.0.1:63776) (destIPAddr:127.0.0.1:20131) 
+
+[2023-12-12 14:05:09] [info] server.go:659 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20132)的协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:659 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20133)的协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:698 dpchain/p2p/server.(*Server).runPeer Added Protocal peer (NodeID:3234616466393433383132316230373166653262386266363532363538333866356334653164633333333436303330356634626531303462613931323831633664616336343539623138353935613163386262663139343432383264306634303561303365333564303735376433383961646562646635343765633165653337) (srcIPAddr:127.0.0.1:63779) (destIPAddr:127.0.0.1:20132) 
+
+[2023-12-12 14:05:09] [info] peer.go:309 dpchain/p2p/server.(*Peer).startProtocols Peer 8f5e3f1dc112525a 127.0.0.1:20131: Starting protocol shh/2
+
+[2023-12-12 14:05:09] [info] peer.go:309 dpchain/p2p/server.(*Peer).startProtocols Peer 8f5e3f1dc112525a 127.0.0.1:20131: Starting protocol spr/0
+
+[2023-12-12 14:05:09] [info] peer.go:309 dpchain/p2p/server.(*Peer).startProtocols Peer 24adf9438121b071 127.0.0.1:20132: Starting protocol shh/2
+
+[2023-12-12 14:05:09] [info] peer.go:309 dpchain/p2p/server.(*Peer).startProtocols Peer 24adf9438121b071 127.0.0.1:20132: Starting protocol spr/0
+
+[2023-12-12 14:05:09] [info] separator.go:115 dpchain/core/separator.(*Separator).handlePeer 与节点(8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d)进行separator handshake!
+
+[2023-12-12 14:05:09] [info] whisper.go:215 dpchain/p2p/whisper.(*Whisper).handlePeer 与节点 (3866356533663164633131323532356134653231386436616638643332613566316265363532653264613737376466393934666337326535316463356663336662353935323433323061666636383032643435333733376262313238383964613438393234373931343631373038383732326366643132396339333937613764) 进行 whisper handshake!
+
+[2023-12-12 14:05:09] [info] server.go:698 dpchain/p2p/server.(*Server).runPeer Added Protocal peer (NodeID:3066313030663539356135353931643438356339323033376235396338303566663664373337373766646563356262623565393539333038386235373962333362366632663434316639386664633266363636653466383762376131643161613133393533343261393339356362323366306562303462623733653266303566) (srcIPAddr:127.0.0.1:63778) (destIPAddr:127.0.0.1:20133) 
+
+[2023-12-12 14:05:09] [info] peer.go:309 dpchain/p2p/server.(*Peer).startProtocols Peer 0f100f595a5591d4 127.0.0.1:20133: Starting protocol shh/2
+
+[2023-12-12 14:05:09] [info] peer.go:309 dpchain/p2p/server.(*Peer).startProtocols Peer 0f100f595a5591d4 127.0.0.1:20133: Starting protocol spr/0
+
+[2023-12-12 14:05:09] [info] separator.go:115 dpchain/core/separator.(*Separator).handlePeer 与节点(0f100f595a5591d485c92037b59c805ff6d73777fdec5bbb5e9593088b579b33b6f2f441f98fdc2f666e4f87b7a1d1aa1395342a9395cb23f0eb04bb73e2f05f)进行separator handshake!
+
+[2023-12-12 14:05:09] [info] separator.go:115 dpchain/core/separator.(*Separator).handlePeer 与节点(24adf9438121b071fe2b8bf65265838f5c4e1dc333460305f4be104ba91281c6dac6459b18595a1c8bbf1944282d0f405a03e35d0757d389adebdf547ec1ee37)进行separator handshake!
+
+[2023-12-12 14:05:09] [info] whisper.go:215 dpchain/p2p/whisper.(*Whisper).handlePeer 与节点 (3066313030663539356135353931643438356339323033376235396338303566663664373337373766646563356262623565393539333038386235373962333362366632663434316639386664633266363636653466383762376131643161613133393533343261393339356362323366306562303462623733653266303566) 进行 whisper handshake!
+
+[2023-12-12 14:05:09] [info] whisper.go:215 dpchain/p2p/whisper.(*Whisper).handlePeer 与节点 (3234616466393433383132316230373166653262386266363532363538333866356334653164633333333436303330356634626531303462613931323831633664616336343539623138353935613163386262663139343432383264306634303561303365333564303735376433383961646562646635343765633165653337) 进行 whisper handshake!
+
+[2023-12-12 14:05:09] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20134)的加密handshake与协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20134)的加密handshake!
+
+[2023-12-12 14:05:09] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20134 
+
+[2023-12-12 14:05:09] [info] server.go:650 dpchain/p2p/server.(*Server).setupConn 下面进行协议handshake ,127.0.0.1:20134 
+
+[2023-12-12 14:05:09] [info] server.go:659 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20134)的协议handshake!
+
+[2023-12-12 14:05:09] [info] server.go:698 dpchain/p2p/server.(*Server).runPeer Added Protocal peer (NodeID:6539346461333436363933376634386631656633393339383664663966313231613031346333373033383537376635636466363734663163363539353564383734613137663636323137646133396164333035303163356238313338356633303738633731373237383934346533303336343230643431313033633634633562) (srcIPAddr:127.0.0.1:63785) (destIPAddr:127.0.0.1:20134) 
+
+[2023-12-12 14:05:09] [info] peer.go:309 dpchain/p2p/server.(*Peer).startProtocols Peer e94da3466937f48f 127.0.0.1:20134: Starting protocol shh/2
+
+[2023-12-12 14:05:09] [info] peer.go:309 dpchain/p2p/server.(*Peer).startProtocols Peer e94da3466937f48f 127.0.0.1:20134: Starting protocol spr/0
+
+[2023-12-12 14:05:09] [info] separator.go:115 dpchain/core/separator.(*Separator).handlePeer 与节点(e94da3466937f48f1ef393986df9f121a014c37038577f5cdf674f1c65955d874a17f66217da39ad30501c5b81385f3078c717278944e3036420d41103c64c5b)进行separator handshake!
+
+[2023-12-12 14:05:09] [info] whisper.go:215 dpchain/p2p/whisper.(*Whisper).handlePeer 与节点 (6539346461333436363933376634386631656633393339383664663966313231613031346333373033383537376635636466363734663163363539353564383734613137663636323137646133396164333035303163356238313338356633303738633731373237383934346533303336343230643431313033633634633562) 进行 whisper handshake!
+
+[2023-12-12 14:05:11] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 1ac5e9c6ebdeb839cbf99eb9a2fb93e4d375ce81259622db3609deb589f7d8a0
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 520bda02dd2c9f58133219483b192e0de7a9a5f365b114eef763a96bd63b234e
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 520bda02dd2c9f58133219483b192e0de7a9a5f365b114eef763a96bd63b234e
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 520bda02dd2c9f58133219483b192e0de7a9a5f365b114eef763a96bd63b234e
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: ad9e0347b558e564786205350e69f2c74ea0ef1f2c2138e7cccaa3f82e6660bc
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: ad9e0347b558e564786205350e69f2c74ea0ef1f2c2138e7cccaa3f82e6660bc
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: ad9e0347b558e564786205350e69f2c74ea0ef1f2c2138e7cccaa3f82e6660bc
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 48033e96f3633b58d360c7816e39f89846217d4690c65de7656b72b6a09139b4
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 48033e96f3633b58d360c7816e39f89846217d4690c65de7656b72b6a09139b4
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 48033e96f3633b58d360c7816e39f89846217d4690c65de7656b72b6a09139b4
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 8bebd4b7006ada293f7beed3b9e5bc2c9799e676c3405fec31c077e6221fbfdc
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 8bebd4b7006ada293f7beed3b9e5bc2c9799e676c3405fec31c077e6221fbfdc
+
+[2023-12-12 14:05:12] [info] whisper.go:277 dpchain/p2p/whisper.(*Whisper).add whisper envelope already cached: 8bebd4b7006ada293f7beed3b9e5bc2c9799e676c3405fec31c077e6221fbfdc
+
+[2023-12-12 14:05:17] [info] separator.go:437 dpchain/core/separator.(*Separator).BackPeerGroup 子网:upper --- 节点:8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d , 内容(<nil>)
+
+[2023-12-12 14:05:22] [info] separator.go:347 dpchain/core/separator.(*Separator).MakeDialBook separator层: 位于unAdded集合中的节点nodeID: 8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d
+
+[2023-12-12 14:05:24] [info] separator.go:355 dpchain/core/separator.(*Separator).MakeDialBook separator层: 成功与nodeID: 8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d建立静态链接, 节点IP:127.0.0.1 , 端口号:20131
+
+[2023-12-12 14:05:24] [info] peergroup.go:102 dpchain/core/separator.(*PeerGroup).Start Separator Construct: Peer Group (upper) is started!
+
+[2023-12-12 14:05:24] [info] separator.go:437 dpchain/core/separator.(*Separator).BackPeerGroup 子网:upper --- 节点:8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d , 内容(&{[143 94 63 29 193 18 82 90 78 33 141 106 248 211 42 95 27 230 82 226 218 119 125 249 148 252 114 229 29 197 252 63 181 149 36 50 10 255 104 2 212 83 115 123 177 40 137 218 72 146 71 145 70 23 8 135 34 207 209 41 201 57 122 125] 0x140000985a0 0x140005ba680 0x14000590600 {13931353169144942624 3123796917 0x103c7eae0} 0x1400047a120})
+
+[2023-12-12 14:05:24] [info] orderServer.go:565 dpchain/core/blockOrdering.(*BlockOrderServer).simpleInit [Block Ordering] simple init begins
+
+[2023-12-12 14:05:24] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d, msgcode: 3
+
+[2023-12-12 14:05:29] [error] orderServer.go:572 dpchain/core/blockOrdering.(*BlockOrderServer).simpleInit [Block Ordering] fail in simpleInit, no enough state messages collected!
+
+[2023-12-12 14:05:29] [info] orderServer.go:565 dpchain/core/blockOrdering.(*BlockOrderServer).simpleInit [Block Ordering] simple init begins
+
+[2023-12-12 14:05:29] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d, msgcode: 3
+
+[2023-12-12 14:05:29] [info] orderServer.go:595 dpchain/core/blockOrdering.(*BlockOrderServer).simpleInit [Block Ordering] service init succeed: current height 0, current version 0000000000000000000000000000000000000000000000000000000000000000
+
+[2023-12-12 14:05:29] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 8f5e3f1dc112525a4e218d6af8d32a5f1be652e2da777df994fc72e51dc5fc3fb59524320aff6802d453737bb12889da489247914617088722cfd129c9397a7d, msgcode: 3
+
+[2023-12-12 14:05:39] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20130)的加密handshake与协议handshake!
+
+[2023-12-12 14:05:39] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:63918的p2p连接请求
+
+[2023-12-12 14:05:39] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:63918)的加密handshake与协议handshake!
+
+[2023-12-12 14:05:39] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:63918)的加密handshake!
+
+[2023-12-12 14:05:39] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:63918 
+
+[2023-12-12 14:05:39] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20130)的加密handshake!
+
+[2023-12-12 14:05:39] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20130 
+
+[2023-12-12 14:05:39] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn b4e9b157eb04a8a3 127.0.0.1:63918 failed checkpoint posthandshake: Connected to self
+[2023-12-12 14:05:39] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn b4e9b157eb04a8a3 127.0.0.1:20130 failed checkpoint posthandshake: Connected to self

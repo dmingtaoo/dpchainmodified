@@ -1,0 +1,6 @@
+[2023-12-12 14:05:11] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn e94da3466937f48f 127.0.0.1:63800 failed checkpoint posthandshake: Connected to self
+[2023-12-12 14:05:11] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn e94da3466937f48f 127.0.0.1:20134 failed checkpoint posthandshake: Connected to self
+[2023-12-12 14:05:41] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn e94da3466937f48f 127.0.0.1:63925 failed checkpoint posthandshake: Connected to self
+[2023-12-12 14:05:41] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn e94da3466937f48f 127.0.0.1:20134 failed checkpoint posthandshake: Connected to self
+[2023-12-12 14:05:53] [warning] request.go:11 dpchain/ginHttp/pkg/app.MarkErrors Http: OpenTxCheckMode Validation is failed -- Param:commandStr , ErrMsg:on:开启交易上链检查 off:关闭交易上链检查
+

@@ -196,6 +196,7 @@ func main() {
 	}
 
 	// 6.启动全部节点的客户端(创建startAll和stopAll脚本)
+	
 	// 6.1 startAll的bat和shell脚本
 	os.Chdir(dperRootDir) // 返回到之前的工作目录
 	startScriptFile := "." + string(os.PathSeparator) + "startAll" + dperfile.AutoScriptSuffix
@@ -209,6 +210,9 @@ func main() {
 		CreateStartAllUnix(startScriptFile, dperInitDir, DperRunModeSetting.GnomeTerminalMode)
 		CreateStopAllUnix(stopScriptFile, dperInitDir, DperRunModeSetting.GnomeTerminalMode)
 	}
+
+	MacStartScript("./macstartAll.sh", dperInitDir)
+   	MacStopScript("./macstopAll.sh", dperInitDir)
 }
 
 func CreateStartAllWin(file string, dperInitDir *dperfile.DperInit) {
@@ -344,4 +348,48 @@ func CreateStopAllUnix(file string, dperInitDir *dperfile.DperInit, isgnome bool
 	stopScriptCmd += "sleep 5\n"
 
 	utils.MkFile(file, stopScriptCmd)
+}
+
+func MacStartScript(file string, dperInitDir *dperfile.DperInit) {
+    var scriptCmd string
+
+    // 指定根目录路径
+    rootDir := "/Users/dengmingtao/Documents/GitHub/dpchain/dper/client/auto"
+
+    // 添加启动 booter 节点的命令
+    scriptCmd += "osascript -e 'tell application \"Terminal\" to do script \"cd " + rootDir + "/dper_booter1 && ./start.sh; exec bash\"'\n"
+
+    // 遍历 dper 节点，启动它们
+    for i := 1; i <= dperInitDir.NetworkSetting.DperCount; i++ {
+        scriptCmd += fmt.Sprintf("osascript -e 'tell application \"Terminal\" to do script \"cd %s/dper_dper%d && ./start.sh; exec bash\"'\n", rootDir, i)
+    }
+
+    // 在运行合约之前等待 20 秒
+    scriptCmd += "sleep 20\n"
+
+    // 遍历 dper 节点，运行合约
+    for i := 1; i <= dperInitDir.NetworkSetting.DperCount; i++ {
+        scriptCmd += fmt.Sprintf("osascript -e 'tell application \"Terminal\" to do script \"cd %s/dper_dper%d && ./run_contract.sh; exec bash\"'\n", rootDir, i)
+    }
+
+    utils.MkFile(file, scriptCmd)
+}
+func MacStopScript(file string, dperInitDir *dperfile.DperInit) {
+    var scriptCmd string
+
+    // 指定根目录路径
+    rootDir := "/Users/dengmingtao/Documents/GitHub/dpchain/dper/client/auto"
+
+    // 添加停止 booter 节点的命令
+    scriptCmd += "osascript -e 'tell application \"Terminal\" to do script \"cd " + rootDir + "/dper_booter1 && ./stop.sh &\"'\n"
+
+    // 遍历 dper 节点，停止它们
+    for i := 1; i <= dperInitDir.NetworkSetting.DperCount; i++ {
+        scriptCmd += fmt.Sprintf("osascript -e 'tell application \"Terminal\" to do script \"cd %s/dper_dper%d && ./stop.sh &\"'\n", rootDir, i)
+    }
+
+    // 等待 5 秒
+    scriptCmd += "sleep 5\n"
+
+    utils.MkFile(file, scriptCmd)
 }

@@ -1,4 +1,0 @@
-[2023-12-08 03:20:18] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn da42f17a8021ed2a 127.0.0.1:52767 failed checkpoint posthandshake: Connected to self
-[2023-12-08 03:20:18] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn da42f17a8021ed2a 127.0.0.1:20133 failed checkpoint posthandshake: Connected to self
-[2023-12-08 03:20:50] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn da42f17a8021ed2a 127.0.0.1:52867 failed checkpoint posthandshake: Connected to self
-[2023-12-08 03:20:50] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn da42f17a8021ed2a 127.0.0.1:20133 failed checkpoint posthandshake: Connected to self

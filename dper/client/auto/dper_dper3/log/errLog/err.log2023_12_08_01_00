@@ -1,6 +1,0 @@
-[2023-12-08 01:00:10] [warning] account_manager.go:234 dpchain/accounts.(*Manager).GetAccount Account Manager: The account (e5cd52e74861595693c4c3014731ee3efcbbece5) can't be found!
-
-[2023-12-08 01:00:10] [warning] dper.go:192 dpchain/ginHttp/router/api.InitRouter.UseAccount.func17 Http: Reply to user request -- UseAccount  warn:account with address: e5cd52e74861595693c4c3014731ee3efcbbece5 cannot load, no such account is found
-
-[2023-12-08 01:00:29] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn da42f17a8021ed2a 127.0.0.1:56273 failed checkpoint posthandshake: Connected to self
-[2023-12-08 01:00:29] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn da42f17a8021ed2a 127.0.0.1:20133 failed checkpoint posthandshake: Connected to self
