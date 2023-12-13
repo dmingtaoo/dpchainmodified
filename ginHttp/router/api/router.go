@@ -6,26 +6,27 @@ import (
 
 	"github.com/gin-gonic/gin"
 )
+
 func CORSMiddleware() gin.HandlerFunc {
-    return func(c *gin.Context) {
-        c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
-        c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
-        c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin, Content-Type, Accept")
-        if c.Request.Method == "OPTIONS" {
-            c.AbortWithStatus(200)
-            return
-        }
-        c.Next()
-    }
+	return func(c *gin.Context) {
+		c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+		c.Writer.Header().Set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS")
+		c.Writer.Header().Set("Access-Control-Allow-Headers", "Origin, Content-Type, Accept")
+		if c.Request.Method == "OPTIONS" {
+			c.AbortWithStatus(200)
+			return
+		}
+		c.Next()
+	}
 }
 
 func InitRouter(bs *api.BlockService, ds *api.DperService, ns *api.NetWorkService, ct *api.ContractService) *gin.Engine {
 	r := gin.New()
-    r.Use(gin.Logger())
-    r.Use(gin.Recovery())
-    r.Use(CORSMiddleware()) // 应用 CORS 中间件
+	r.Use(gin.Logger())
+	r.Use(gin.Recovery())
+	r.Use(CORSMiddleware()) // 应用 CORS 中间件
 
-    gin.SetMode(setting.ServerSetting.RunMode)
+	gin.SetMode(setting.ServerSetting.RunMode)
 	r.Use(gin.Logger())
 	r.Use(gin.Recovery())
 
@@ -69,7 +70,7 @@ func InitRouter(bs *api.BlockService, ds *api.DperService, ns *api.NetWorkServic
 		dper.POST("/sendvc/:destinationPort", SendVC(ds))               //just for scene 3, when sp request ue's signature
 		dper.POST("/sendrandom/:destinationPort", SendRandom(ds))
 		dper.POST("/signaturereturn", SignatureReturn(ds))
-		dper.POST("/signaturereturn2", SignatureReturn(ds))
+		dper.POST("/signaturereturn2", SignatureReturn2(ds))
 		dper.POST("/signvalid", SignValid(ds))
 		dper.POST("/vcreceive", VCReceive(ds))
 		dper.POST("/vcreceive2", VCReceive2(ds))
@@ -81,6 +82,7 @@ func InitRouter(bs *api.BlockService, ds *api.DperService, ns *api.NetWorkServic
 		dper.POST("/getaddress", GetAddress(ds))
 		dper.POST("/transvcrequest/:destinationPort", TransVCrequest(ds))
 		dper.POST("/transvc", TransVC(ds))
+		dper.POST("/setdid", SetDID(ds))
 
 		dper.POST("/softInvokeQuery", SoftInvokeQuery(ds))
 		dper.POST("/publishTx", PublishTx(ds))

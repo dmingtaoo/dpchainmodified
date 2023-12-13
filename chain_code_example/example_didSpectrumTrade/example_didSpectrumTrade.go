@@ -57,23 +57,6 @@ func isDateExpired(dateStr string) (bool, error) {
 	return expiryDate.Before(currentDate), nil
 }
 
-// func StringToMap(str string) (map[string]string, error) {
-//     resultMap := make(map[string]string)
-//     pairs := strings.Split(str, ",")
-//     for _, pair := range pairs {
-//         // 找到第一个冒号的位置
-//         idx := strings.Index(pair, ":")
-//         if idx == -1 {
-//             return nil, fmt.Errorf("invalid pair (no colon found): %s", pair)
-//         }
-
-//         key := pair[:idx]
-//         value := pair[idx+1:]
-//         resultMap[key] = value
-//     }
-//     return resultMap, nil
-// }
-
 func StringToMap(str string) (map[string]string, error) {
 	resultMap := make(map[string]string)
 
@@ -338,9 +321,8 @@ func SetDID(args [][]byte, ds cc.DperServicePipe) ([][]byte, error) {
 	}
 
 	str1 := string(args[0])
-	str2 := string(args[1])
 
-	if len(str1) < 4 || str1[:4] != "DID:" || len(str2) < 8 || str2[:8] != "address:" {
+	if len(str1) < 4 || str1[:4] != "DID:" {
 		return nil, fmt.Errorf("invalid argument format")
 	}
 
