@@ -756,6 +756,9 @@ func SendVC(ds *api.DperService) func(*gin.Context) {
 		// 准备要发送的数据
 		formData := url.Values{
 			"vc": {vcString},
+			"signature":{Signature},
+			"identifier":{Identifier},
+			"subject":{Subject},
 		}
 		// 发送 HTTP POST 请求
 		resp, err := http.PostForm(destinationURL, formData)
@@ -765,17 +768,23 @@ func SendVC(ds *api.DperService) func(*gin.Context) {
 		}
 		defer resp.Body.Close()
 
-		// 读取响应
-		responseBody, err := ioutil.ReadAll(resp.Body)
+
+		// 读取响应内容
+		body, err := ioutil.ReadAll(resp.Body)
 		if err != nil {
 			appG.Response(http.StatusInternalServerError, e.ERROR, err)
 			return
 		}
 
-		// 返回响应给调用方
-		c.JSON(http.StatusOK, gin.H{
-			"response": string(responseBody),
-		})
+		// 解码 JSON 响应
+		var response map[string]interface{}
+		err = json.Unmarshal(body, &response)
+		if err != nil {
+			appG.Response(http.StatusInternalServerError, e.ERROR, err)
+			return
+		}
+
+		c.JSON(http.StatusOK, response)
 	}
 }
 
@@ -785,6 +794,9 @@ func VCValid(ds *api.DperService) func(*gin.Context) {
 
 		// 从请求中获取VC字符串
 		vcString := c.PostForm("vc")
+		Signature:= c.PostForm("signature")
+		Identifier:=c.PostForm("identifier")
+		Subject:=c.PostForm("subject")
 		if vcString == "" {
 			appG.Response(http.StatusBadRequest, e.ERROR, "No VC data received")
 			return
@@ -803,23 +815,30 @@ func VCValid(ds *api.DperService) func(*gin.Context) {
 			if reflect.DeepEqual(receipt, transactionCheck.CheckResult{}) {
 				appG.Response(http.StatusOK, e.SUCCESS, nil)
 			} else {
-				type ResponseReceipt struct {
-					TxID   string `json:"Transaction ID"`
-					Valid  bool   `json:"Valid"`
-					Result string `json:"Transaction Results"`
-					Delay  string `json:"Consensus Delay"`
+				// type ResponseReceipt struct {
+				// 	TxID   string `json:"Transaction ID"`
+				// 	Valid  bool   `json:"Valid"`
+				// 	Result string `json:"Transaction Results"`
+				// 	Delay  string `json:"Consensus Delay"`
+				response := gin.H{
+					"Identifier": Identifier,
+					"SubjectDID": Subject,
+					"Signature":Signature,
 				}
-				var r ResponseReceipt = ResponseReceipt{
-					TxID:   fmt.Sprintf("%x", receipt.TransactionID),
-					Valid:  receipt.Valid,
-					Result: fmt.Sprintf("%s", receipt.Result),
-					Delay:  fmt.Sprintf("%d ms", receipt.Interval.Milliseconds()),
+				// 返回响应给调用方
+				c.JSON(http.StatusOK, response)
 				}
-				appG.Response(http.StatusOK, e.SUCCESS, r)
+				// var r ResponseReceipt = ResponseReceipt{
+				// 	TxID:   fmt.Sprintf("%x", receipt.TransactionID),
+				// 	Valid:  receipt.Valid,
+				// 	Result: fmt.Sprintf("%s", receipt.Result),
+				// 	Delay:  fmt.Sprintf("%d ms", receipt.Interval.Milliseconds()),
+				}
+
 			}
 		}
-	}
-}
+	
+
 
 func SignValid(ds *api.DperService) func(*gin.Context) {
 	return func(c *gin.Context) {

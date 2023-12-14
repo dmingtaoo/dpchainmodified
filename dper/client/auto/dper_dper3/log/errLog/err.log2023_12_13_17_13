@@ -1,5 +1,0 @@
-[2023-12-13 17:13:34] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 60dc34b7697c9058 127.0.0.1:61235 failed checkpoint posthandshake: Connected to self
-[2023-12-13 17:13:34] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 60dc34b7697c9058 127.0.0.1:20133 failed checkpoint posthandshake: Connected to self
-[2023-12-13 17:13:34] [warning] server.go:564 dpchain/p2p/server.(*Server).encHandshakeChecks 进行加密handshake: 节点已经与本机建立了连接
-
-[2023-12-13 17:13:34] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 4e42a659d605711a 127.0.0.1:61237 failed checkpoint posthandshake: Already connected
