@@ -1,0 +1,34 @@
+[2023-12-14 10:59:00] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 3
+
+[2023-12-14 10:59:00] [info] orderServer.go:430 dpchain/core/blockOrdering.(*BlockOrderServer).tryLaunchNewRound [Block Ordering] A new next message is generated and sent, version: 834547040b5cf49c2e0bb0d9d850e4a619d26c1cc607b6996dc9a0a97d0b8487, height: 3, BlockID: 3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657
+
+[2023-12-14 10:59:01] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 3
+
+[2023-12-14 10:59:20] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 3
+
+[2023-12-14 10:59:20] [info] orderServer.go:430 dpchain/core/blockOrdering.(*BlockOrderServer).tryLaunchNewRound [Block Ordering] A new next message is generated and sent, version: 3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657, height: 4, BlockID: 7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75
+
+[2023-12-14 10:59:20] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 3
+
+[2023-12-14 10:59:23] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 3
+
+[2023-12-14 10:59:23] [info] orderServer.go:430 dpchain/core/blockOrdering.(*BlockOrderServer).tryLaunchNewRound [Block Ordering] A new next message is generated and sent, version: 7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75, height: 5, BlockID: 4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6
+
+[2023-12-14 10:59:23] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 3
+
+[2023-12-14 10:59:31] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20130)的加密handshake与协议handshake!
+
+[2023-12-14 10:59:31] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:56965的p2p连接请求
+
+[2023-12-14 10:59:31] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:56965)的加密handshake与协议handshake!
+
+[2023-12-14 10:59:31] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:56965)的加密handshake!
+
+[2023-12-14 10:59:31] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:56965 
+
+[2023-12-14 10:59:31] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn d8ecfb6a63fa3bf7 127.0.0.1:56965 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:59:31] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20130)的加密handshake!
+
+[2023-12-14 10:59:31] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20130 
+
+[2023-12-14 10:59:31] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn d8ecfb6a63fa3bf7 127.0.0.1:20130 failed checkpoint posthandshake: Connected to self

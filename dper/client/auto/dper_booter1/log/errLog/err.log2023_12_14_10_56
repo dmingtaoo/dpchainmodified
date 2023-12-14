@@ -1,0 +1,6 @@
+[2023-12-14 10:56:09] [error] orderServer.go:572 dpchain/core/blockOrdering.(*BlockOrderServer).simpleInit [Block Ordering] fail in simpleInit, no enough state messages collected!
+
+[2023-12-14 10:56:19] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn d8ecfb6a63fa3bf7 127.0.0.1:55664 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:56:19] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn d8ecfb6a63fa3bf7 127.0.0.1:20130 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:56:51] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn d8ecfb6a63fa3bf7 127.0.0.1:55860 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:56:51] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn d8ecfb6a63fa3bf7 127.0.0.1:20130 failed checkpoint posthandshake: Connected to self

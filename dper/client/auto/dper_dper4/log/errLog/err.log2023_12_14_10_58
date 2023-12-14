@@ -1,0 +1,6 @@
+[2023-12-14 10:58:14] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (1) and currentHeight (0)
+
+[2023-12-14 10:58:30] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 04d9d9f799e09700 127.0.0.1:20134 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:58:30] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 04d9d9f799e09700 127.0.0.1:56544 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:58:58] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (3) and currentHeight (2)
+

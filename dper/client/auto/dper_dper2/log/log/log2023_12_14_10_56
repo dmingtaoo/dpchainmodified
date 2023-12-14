@@ -1,0 +1,68 @@
+[2023-12-14 10:56:03] [info] separator.go:347 dpchain/core/separator.(*Separator).MakeDialBook separator层: 位于unAdded集合中的节点nodeID: 04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452
+
+[2023-12-14 10:56:05] [info] separator.go:355 dpchain/core/separator.(*Separator).MakeDialBook separator层: 成功与nodeID: 04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452建立静态链接, 节点IP:127.0.0.1 , 端口号:20134
+
+[2023-12-14 10:56:05] [info] separator.go:347 dpchain/core/separator.(*Separator).MakeDialBook separator层: 位于unAdded集合中的节点nodeID: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0
+
+[2023-12-14 10:56:07] [info] separator.go:355 dpchain/core/separator.(*Separator).MakeDialBook separator层: 成功与nodeID: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0建立静态链接, 节点IP:127.0.0.1 , 端口号:20131
+
+[2023-12-14 10:56:07] [info] separator.go:347 dpchain/core/separator.(*Separator).MakeDialBook separator层: 位于unAdded集合中的节点nodeID: 79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3
+
+[2023-12-14 10:56:09] [info] separator.go:355 dpchain/core/separator.(*Separator).MakeDialBook separator层: 成功与nodeID: 79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3建立静态链接, 节点IP:127.0.0.1 , 端口号:20133
+
+[2023-12-14 10:56:09] [info] peergroup.go:102 dpchain/core/separator.(*PeerGroup).Start Separator Construct: Peer Group (net0) is started!
+
+[2023-12-14 10:56:09] [info] separator.go:437 dpchain/core/separator.(*Separator).BackPeerGroup 子网:net0 --- 节点:13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0 , 内容(&{[19 34 144 70 237 172 186 11 242 250 233 235 190 15 60 126 204 170 2 145 69 137 131 243 101 18 209 43 105 69 115 68 222 62 21 10 100 65 193 220 148 32 18 250 120 175 126 171 92 60 18 217 132 230 108 91 230 5 98 184 211 183 6 208] 0x140001a7560 0x140001d91c0 0x140000a13e0 {13931526514762775008 2780082335 0x10568aae0} 0x1400010eb40})
+
+[2023-12-14 10:56:09] [info] separator.go:437 dpchain/core/separator.(*Separator).BackPeerGroup 子网:net0 --- 节点:79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3 , 内容(&{[121 249 6 43 253 4 20 63 206 89 237 114 26 26 56 64 13 67 72 122 230 190 235 179 253 5 186 141 2 68 91 212 156 1 104 62 208 158 213 54 241 227 234 23 168 86 201 109 248 133 166 225 101 153 86 1 182 71 139 202 174 191 30 163] 0x140001a7560 0x14000309000 0x14000681080 {13931526516490661832 4434265543 0x10568aae0} 0x14000333b00})
+
+[2023-12-14 10:56:09] [info] separator.go:437 dpchain/core/separator.(*Separator).BackPeerGroup 子网:net0 --- 节点:04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452 , 内容(&{[4 217 217 247 153 224 151 0 124 242 19 58 136 195 243 156 6 103 144 181 218 232 53 139 74 173 202 110 28 88 47 150 41 121 90 163 48 129 233 129 253 168 65 154 41 66 7 30 5 41 62 57 122 223 51 150 108 168 202 6 55 110 228 82] 0x140001a7560 0x140004db380 0x140005d6300 {13931526517432012656 5301894460 0x10568aae0} 0x140005d4720})
+
+[2023-12-14 10:56:09] [info] tpbt_common.go:374 dpchain/core/consensus.(*Ctpbft).Start Ctpbft: Common Kind PBFT starts to running, transaction pool: 6370626674
+
+[2023-12-14 10:56:20] [info] dper.go:234 dpchain/ginHttp/router/api.InitRouter.BackAccountList.func16 Http: Get user request -- BackAccountList
+
+[2023-12-14 10:56:20] [info] dper.go:244 dpchain/ginHttp/router/api.InitRouter.BackAccountList.func16 Http: Reply to user request -- BackAccountList  succeed!
+
+[2023-12-14 10:56:20] [info] dper.go:286 dpchain/ginHttp/router/api.InitRouter.UseAccount.func18 Http: Get user request -- UseAccount  account:a68d361b000f35cfcdc5a5c18a90e50a4ec3b4e9
+
+[2023-12-14 10:56:21] [info] dper.go:302 dpchain/ginHttp/router/api.InitRouter.UseAccount.func18 Http: Reply to user request -- UseAccount  succeed!
+
+[2023-12-14 10:56:22] [info] dper.go:331 dpchain/ginHttp/router/api.InitRouter.OpenTxCheckMode.func20 Http: Get user request -- OpenTxCheckMode  mode:on
+
+[2023-12-14 10:56:22] [info] dperCommand.go:379 dpchain/dper/client/commandLine.(*CommandLine).handleTxCheckMode Dper: handleTxCheckMode runs successfully, The current Tx check mode is on
+
+[2023-12-14 10:56:22] [info] dper.go:342 dpchain/ginHttp/router/api.InitRouter.OpenTxCheckMode.func20 Http: Reply to user request -- OpenTxCheckMode  succeed!
+
+[2023-12-14 10:56:23] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:55700的p2p连接请求
+
+[2023-12-14 10:56:23] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20132)的加密handshake与协议handshake!
+
+[2023-12-14 10:56:23] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:55700)的加密handshake与协议handshake!
+
+[2023-12-14 10:56:23] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:55700)的加密handshake!
+
+[2023-12-14 10:56:23] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:55700 
+
+[2023-12-14 10:56:23] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 8870562e71780cf4 127.0.0.1:55700 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:56:23] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20132)的加密handshake!
+
+[2023-12-14 10:56:23] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20132 
+
+[2023-12-14 10:56:23] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 8870562e71780cf4 127.0.0.1:20132 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:56:55] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:55893的p2p连接请求
+
+[2023-12-14 10:56:55] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20132)的加密handshake与协议handshake!
+
+[2023-12-14 10:56:55] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:55893)的加密handshake与协议handshake!
+
+[2023-12-14 10:56:55] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:55893)的加密handshake!
+
+[2023-12-14 10:56:55] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:55893 
+
+[2023-12-14 10:56:55] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20132)的加密handshake!
+
+[2023-12-14 10:56:55] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20132 
+
+[2023-12-14 10:56:55] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 8870562e71780cf4 127.0.0.1:20132 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:56:55] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 8870562e71780cf4 127.0.0.1:55893 failed checkpoint posthandshake: Connected to self

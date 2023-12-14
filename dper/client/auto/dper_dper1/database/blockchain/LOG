@@ -1,0 +1,6 @@
+=============== Dec 14, 2023 (CST) ===============
+10:55:47.635208 log@legend F·NumFile S·FileSize N·Entry C·BadEntry B·BadBlock Ke·KeyError D·DroppedEntry L·Level Q·SeqNum T·TimeElapsed
+10:55:47.649109 db@open opening
+10:55:47.650640 version@stat F·[] S·0B[] Sc·[]
+10:55:47.650729 db@janitor F·2 G·0
+10:55:47.650762 db@open done T·1.617917ms

@@ -1,0 +1,358 @@
+[2023-12-14 10:59:00] [info] consensusPromoter.go:253 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Current Consensus Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has receive pre-prepare Message from Leader (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) within group (net0)
+
+[2023-12-14 10:59:00] [info] consensusPromoter.go:256 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Leader (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) doesn't have corresponding roundHandler, Waiting for creation....
+
+[2023-12-14 10:59:00] [info] transactionPool.go:195 dpchain/core/eles.(*TransactionPool).QuickFindTxs 即将被添加的交易 ： 648c4ad87736d2cd1fe79cd75f97769159982908d09cd24c86ee3cca8ca39bb9
+
+[2023-12-14 10:59:00] [info] transactionPool.go:209 dpchain/core/eles.(*TransactionPool).QuickFindTxs QuickFind获取的结果, 第0条交易： 648c4ad87736d2cd1fe79cd75f97769159982908d09cd24c86ee3cca8ca39bb9
+
+[2023-12-14 10:59:00] [info] blockChain.go:537 dpchain/core/eles.(*BlockChain).StaleCheck [Block Chain] StaleCheck 被调用
+
+[2023-12-14 10:59:00] [info] consensusPromoter.go:302 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: The new roundHandler (roundID:73070432fd44290b227db705e137fe5c6be60eba69e323d4437bcaae288b6e1c) has been created and being running
+
+[2023-12-14 10:59:00] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 2
+
+[2023-12-14 10:59:00] [info] consensusPromoter.go:249 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus failed: Leader (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) doesn't have corresponding roundHandler, Cann't process messages of non-StatePrePrepare Msg!
+
+[2023-12-14 10:59:00] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3, msgcode: 2
+
+[2023-12-14 10:59:00] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452, msgcode: 2
+
+[2023-12-14 10:59:00] [info] roundHandler.go:286 dpchain/core/consensus.(*roundHandler).SendPrepareMsg [TPBFT Consensus] Lower Channel: Current Consensus Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has broadcast prepareMsg within roundID (73070432fd44290b227db705e137fe5c6be60eba69e323d4437bcaae288b6e1c)
+
+[2023-12-14 10:59:00] [info] roundHandler.go:161 dpchain/core/consensus.(*roundHandler).Start [TPBFT Consensus] Lower Channel: roudHandler with round ID: 73070432fd44290b227db705e137fe5c6be60eba69e323d4437bcaae288b6e1c starts to running!
+
+[2023-12-14 10:59:00] [info] roundHandler.go:113 dpchain/core/consensus.(*roundHandler).processMsg [TPBFT Consensus] Lower Consensus: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) receive validated PrepareMsg from Node (79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3) and has added it into roundHandler.prepareMsgPool
+
+[2023-12-14 10:59:00] [info] roundHandler.go:113 dpchain/core/consensus.(*roundHandler).processMsg [TPBFT Consensus] Lower Consensus: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) receive validated PrepareMsg from Node (04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452) and has added it into roundHandler.prepareMsgPool
+
+[2023-12-14 10:59:00] [info] roundHandler.go:200 dpchain/core/consensus.(*roundHandler).Do [TPBFT Consensus] Lower Channel: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has completed the prepare phase consensus, validOrder:[1]
+
+[2023-12-14 10:59:00] [info] tpbt_common.go:277 dpchain/core/consensus.(*Ctpbft).TidyTransactions [TPBFT Consensus] Ctpbft: Leader (488e4b944d228f1f01892cfc5bfc060ed37e2f62) Tidy candidateBlock successfully, blockID:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657, txSum:1
+
+[2023-12-14 10:59:00] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 2
+
+[2023-12-14 10:59:00] [info] roundHandler.go:238 dpchain/core/consensus.(*roundHandler).Do [TPBFT Consensus] Lower Channel: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has completed the tidy phase consensus and has sent CommitMsg to the Leader (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)
+
+[2023-12-14 10:59:00] [info] roundHandler.go:170 dpchain/core/consensus.(*roundHandler).Stop.func1 [TPBFT Consensus] Lower Channel: roudHandler with round ID: 73070432fd44290b227db705e137fe5c6be60eba69e323d4437bcaae288b6e1c stop!
+
+[2023-12-14 10:59:02] [info] synchronization.go:451 dpchain/blockSync.(*SyncProtocal).syncer Block synchronization: Start block synchronization with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)...  ---  local node currentHeight (3), remote node currentHeight (4)
+
+[2023-12-14 10:59:02] [info] downloader.go:150 dpchain/blockSync/downloader.(*Downloader).Synchronise Block synchronization downloader: Attempting synchronise with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)... RemoteCurrentVersion (3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657) RemoteCurrentHeight (4)
+
+[2023-12-14 10:59:02] [info] downloader.go:229 dpchain/blockSync/downloader.(*Downloader).FindAncestor Block synchronization downloader: Attempting to query the common ancestor block with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) ...
+
+[2023-12-14 10:59:02] [info] blockChain.go:397 dpchain/core/eles.(*BlockChain).GetCurrentBlock [Block Chain] GetCurrentBlock 被调用
+
+[2023-12-14 10:59:02] [info] blockChain.go:286 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 被调用
+
+[2023-12-14 10:59:02] [info] blockChain.go:313 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 调用结束
+
+[2023-12-14 10:59:02] [info] downloader.go:250 dpchain/blockSync/downloader.(*Downloader).FindAncestor @@@@@@@@@@@@@@@@@@  请求方：本地头区块:2 , 同步起始区块:0
+
+[2023-12-14 10:59:02] [info] synchronization.go:270 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization:  Receive BlockHashesMsg from remote peer (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0), the number of BlockHashes is (4)
+
+[2023-12-14 10:59:02] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:02] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:02] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:02] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:02] [info] downloader.go:298 dpchain/blockSync/downloader.(*Downloader).FindAncestor @@@@@@@@@@@@@@@@@@  处理后起始区块:2,请求个数:1
+
+[2023-12-14 10:59:02] [info] downloader.go:199 dpchain/blockSync/downloader.(*Downloader).syncWithPeer Block synchronization downloader: Fetch common ancestor block is succeed, ancestor blockNumber (2), Number of blocks (1) waiting for synchronization
+
+[2023-12-14 10:59:02] [info] blockChain.go:397 dpchain/core/eles.(*BlockChain).GetCurrentBlock [Block Chain] GetCurrentBlock 被调用
+
+[2023-12-14 10:59:02] [info] blockChain.go:286 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 被调用
+
+[2023-12-14 10:59:02] [info] blockChain.go:313 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 调用结束
+
+[2023-12-14 10:59:02] [info] downloader.go:323 dpchain/blockSync/downloader.(*Downloader).fetchBlocks Block synchronization downloader: Start to fetch (1) blocks by remote node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) from block (2) ...
+
+[2023-12-14 10:59:02] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:02] [info] blockChain.go:181 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 开始启动, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657
+
+[2023-12-14 10:59:02] [info] blockChain.go:186 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 进行新区块的插入, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657
+
+[2023-12-14 10:59:02] [info] blockChain.go:192 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成新区块的插入, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657
+
+[2023-12-14 10:59:02] [info] blockChain.go:194 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备执行区块内的交易, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657
+
+[2023-12-14 10:59:02] [info] blockChain.go:202 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对区块内交易的执行, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657
+
+[2023-12-14 10:59:02] [info] blockChain.go:217 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备更新交易过滤器, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657
+
+[2023-12-14 10:59:02] [info] blockChain.go:221 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对交易过滤器的更新, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657
+
+[2023-12-14 10:59:02] [info] blockChain.go:231 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备更新区块链状态量, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657 , block Height:4 
+
+[2023-12-14 10:59:02] [info] blockChain.go:240 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对区块链状态量的更新, block Hash:3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657 , block Height:4 
+
+[2023-12-14 10:59:02] [info] downloader.go:360 dpchain/blockSync/downloader.(*Downloader).fetchBlocks Block synchronization downloader: Block synchronization succeeded, Current local blockchain status: CurrentHeight (4), CurrentVersion (3333de4e091f8488b1321c170c2eaa8adfb9366f864f40f1e916d3a0d42a7657)
+
+[2023-12-14 10:59:02] [info] downloader.go:154 dpchain/blockSync/downloader.(*Downloader).Synchronise Block synchronization downloader: Block Synchronisation with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) has been completed!
+
+[2023-12-14 10:59:02] [info] dperCommand.go:546 dpchain/dper/client/commandLine.(*CommandLine).printTransactionCheckResults Transaction ID: 648c4ad87736d2cd1fe79cd75f97769159982908d09cd24c86ee3cca8ca39bb9
+
+[2023-12-14 10:59:02] [info] dperCommand.go:547 dpchain/dper/client/commandLine.(*CommandLine).printTransactionCheckResults Valid: true
+
+[2023-12-14 10:59:02] [info] dperCommand.go:548 dpchain/dper/client/commandLine.(*CommandLine).printTransactionCheckResults Transaction Results: [Credential: {Identifier:3ac31f81-2a79-4f2d-bdec-4497b5cb93b1 Subject:DID:22222222 Issuer:DID:11111111 Validity:2023-12-29 Purpose:GetData Signature:f0901058ea48e9ac698de1aaeda30a5a26c972d69e58b8a607cf5ce14009b35c526f15bcb6b807d738ebdce7bf1671539de43fbcb1ffdfde24942676767a255401 Reassign:OK IssuerAddress:488e4b944d228f1f01892cfc5bfc060ed37e2f62 SubjectAddress:a68d361b000f35cfcdc5a5c18a90e50a4ec3b4e9 Transfer:{Recipient:DID:33333333 RecipientPurpose:GetData RecipientAddress:45dd07f9ffe54bd85765c5e17fe2581b3bbf2981 DonorSignature:12b4bd50317f16ce1ab49618d460aa74299a12fd765b7c383a9e2605af72e7be70221efa09983609b0ff237852e5212960a49fa7311693644230ab080e91dae801 Timestamp:2023-12-14}}]
+
+[2023-12-14 10:59:02] [info] dperCommand.go:549 dpchain/dper/client/commandLine.(*CommandLine).printTransactionCheckResults Consensus Delay: 2262 ms
+
+[2023-12-14 10:59:03] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20132)的加密handshake与协议handshake!
+
+[2023-12-14 10:59:03] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:56727的p2p连接请求
+
+[2023-12-14 10:59:03] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:56727)的加密handshake与协议handshake!
+
+[2023-12-14 10:59:03] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:56727)的加密handshake!
+
+[2023-12-14 10:59:03] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:56727 
+
+[2023-12-14 10:59:03] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 8870562e71780cf4 127.0.0.1:56727 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:59:03] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20132)的加密handshake!
+
+[2023-12-14 10:59:03] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20132 
+
+[2023-12-14 10:59:03] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 8870562e71780cf4 127.0.0.1:20132 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:59:19] [info] consensusPromoter.go:229 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Current Consensus Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has receive transaction (count:1) from other consensus node (45dd07f9ffe54bd85765c5e17fe2581b3bbf2981) 
+
+[2023-12-14 10:59:19] [info] consensusPromoter.go:253 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Current Consensus Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has receive pre-prepare Message from Leader (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) within group (net0)
+
+[2023-12-14 10:59:19] [info] consensusPromoter.go:256 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Leader (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) doesn't have corresponding roundHandler, Waiting for creation....
+
+[2023-12-14 10:59:19] [info] transactionPool.go:195 dpchain/core/eles.(*TransactionPool).QuickFindTxs 即将被添加的交易 ： a5edc3939350ce24c3ed3cfd70f28776b7b639b1c2129e47e2821f2b68704382
+
+[2023-12-14 10:59:19] [info] transactionPool.go:209 dpchain/core/eles.(*TransactionPool).QuickFindTxs QuickFind获取的结果, 第0条交易： a5edc3939350ce24c3ed3cfd70f28776b7b639b1c2129e47e2821f2b68704382
+
+[2023-12-14 10:59:19] [info] blockChain.go:537 dpchain/core/eles.(*BlockChain).StaleCheck [Block Chain] StaleCheck 被调用
+
+[2023-12-14 10:59:19] [info] consensusPromoter.go:302 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: The new roundHandler (roundID:3af56c64bc111bd1c41e275fe7e8ea235a101f812d2710e096df2204f35fc9e8) has been created and being running
+
+[2023-12-14 10:59:19] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3, msgcode: 2
+
+[2023-12-14 10:59:19] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452, msgcode: 2
+
+[2023-12-14 10:59:19] [info] consensusPromoter.go:249 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus failed: Leader (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) doesn't have corresponding roundHandler, Cann't process messages of non-StatePrePrepare Msg!
+
+[2023-12-14 10:59:19] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 2
+
+[2023-12-14 10:59:19] [info] roundHandler.go:286 dpchain/core/consensus.(*roundHandler).SendPrepareMsg [TPBFT Consensus] Lower Channel: Current Consensus Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has broadcast prepareMsg within roundID (3af56c64bc111bd1c41e275fe7e8ea235a101f812d2710e096df2204f35fc9e8)
+
+[2023-12-14 10:59:19] [info] roundHandler.go:161 dpchain/core/consensus.(*roundHandler).Start [TPBFT Consensus] Lower Channel: roudHandler with round ID: 3af56c64bc111bd1c41e275fe7e8ea235a101f812d2710e096df2204f35fc9e8 starts to running!
+
+[2023-12-14 10:59:19] [info] roundHandler.go:113 dpchain/core/consensus.(*roundHandler).processMsg [TPBFT Consensus] Lower Consensus: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) receive validated PrepareMsg from Node (04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452) and has added it into roundHandler.prepareMsgPool
+
+[2023-12-14 10:59:19] [info] roundHandler.go:200 dpchain/core/consensus.(*roundHandler).Do [TPBFT Consensus] Lower Channel: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has completed the prepare phase consensus, validOrder:[1]
+
+[2023-12-14 10:59:19] [info] roundHandler.go:113 dpchain/core/consensus.(*roundHandler).processMsg [TPBFT Consensus] Lower Consensus: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) receive validated PrepareMsg from Node (79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3) and has added it into roundHandler.prepareMsgPool
+
+[2023-12-14 10:59:19] [info] tpbt_common.go:277 dpchain/core/consensus.(*Ctpbft).TidyTransactions [TPBFT Consensus] Ctpbft: Leader (488e4b944d228f1f01892cfc5bfc060ed37e2f62) Tidy candidateBlock successfully, blockID:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75, txSum:1
+
+[2023-12-14 10:59:19] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 2
+
+[2023-12-14 10:59:19] [info] roundHandler.go:238 dpchain/core/consensus.(*roundHandler).Do [TPBFT Consensus] Lower Channel: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has completed the tidy phase consensus and has sent CommitMsg to the Leader (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)
+
+[2023-12-14 10:59:19] [info] roundHandler.go:170 dpchain/core/consensus.(*roundHandler).Stop.func1 [TPBFT Consensus] Lower Channel: roudHandler with round ID: 3af56c64bc111bd1c41e275fe7e8ea235a101f812d2710e096df2204f35fc9e8 stop!
+
+[2023-12-14 10:59:21] [info] synchronization.go:451 dpchain/blockSync.(*SyncProtocal).syncer Block synchronization: Start block synchronization with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)...  ---  local node currentHeight (4), remote node currentHeight (5)
+
+[2023-12-14 10:59:21] [info] downloader.go:150 dpchain/blockSync/downloader.(*Downloader).Synchronise Block synchronization downloader: Attempting synchronise with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)... RemoteCurrentVersion (7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75) RemoteCurrentHeight (5)
+
+[2023-12-14 10:59:21] [info] downloader.go:229 dpchain/blockSync/downloader.(*Downloader).FindAncestor Block synchronization downloader: Attempting to query the common ancestor block with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) ...
+
+[2023-12-14 10:59:21] [info] blockChain.go:397 dpchain/core/eles.(*BlockChain).GetCurrentBlock [Block Chain] GetCurrentBlock 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:286 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:313 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 调用结束
+
+[2023-12-14 10:59:21] [info] downloader.go:250 dpchain/blockSync/downloader.(*Downloader).FindAncestor @@@@@@@@@@@@@@@@@@  请求方：本地头区块:3 , 同步起始区块:0
+
+[2023-12-14 10:59:21] [info] synchronization.go:270 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization:  Receive BlockHashesMsg from remote peer (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0), the number of BlockHashes is (5)
+
+[2023-12-14 10:59:21] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:21] [info] downloader.go:298 dpchain/blockSync/downloader.(*Downloader).FindAncestor @@@@@@@@@@@@@@@@@@  处理后起始区块:3,请求个数:1
+
+[2023-12-14 10:59:21] [info] downloader.go:199 dpchain/blockSync/downloader.(*Downloader).syncWithPeer Block synchronization downloader: Fetch common ancestor block is succeed, ancestor blockNumber (3), Number of blocks (1) waiting for synchronization
+
+[2023-12-14 10:59:21] [info] blockChain.go:397 dpchain/core/eles.(*BlockChain).GetCurrentBlock [Block Chain] GetCurrentBlock 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:286 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:313 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 调用结束
+
+[2023-12-14 10:59:21] [info] downloader.go:323 dpchain/blockSync/downloader.(*Downloader).fetchBlocks Block synchronization downloader: Start to fetch (1) blocks by remote node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) from block (3) ...
+
+[2023-12-14 10:59:21] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:21] [info] blockChain.go:181 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 开始启动, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75
+
+[2023-12-14 10:59:21] [info] blockChain.go:186 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 进行新区块的插入, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75
+
+[2023-12-14 10:59:21] [info] blockChain.go:192 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成新区块的插入, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75
+
+[2023-12-14 10:59:21] [info] blockChain.go:194 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备执行区块内的交易, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75
+
+[2023-12-14 10:59:21] [info] blockChain.go:202 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对区块内交易的执行, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75
+
+[2023-12-14 10:59:21] [info] blockChain.go:217 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备更新交易过滤器, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75
+
+[2023-12-14 10:59:21] [info] blockChain.go:221 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对交易过滤器的更新, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75
+
+[2023-12-14 10:59:21] [info] blockChain.go:231 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备更新区块链状态量, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75 , block Height:5 
+
+[2023-12-14 10:59:21] [info] blockChain.go:240 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对区块链状态量的更新, block Hash:7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75 , block Height:5 
+
+[2023-12-14 10:59:21] [info] downloader.go:360 dpchain/blockSync/downloader.(*Downloader).fetchBlocks Block synchronization downloader: Block synchronization succeeded, Current local blockchain status: CurrentHeight (5), CurrentVersion (7b3a92e7d85474b459759ea69bba5e628357c78c43e4fa278c6c567d78103a75)
+
+[2023-12-14 10:59:21] [info] downloader.go:154 dpchain/blockSync/downloader.(*Downloader).Synchronise Block synchronization downloader: Block Synchronisation with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) has been completed!
+
+[2023-12-14 10:59:22] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 6
+
+[2023-12-14 10:59:22] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3, msgcode: 6
+
+[2023-12-14 10:59:22] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452, msgcode: 6
+
+[2023-12-14 10:59:22] [info] consensusPromoter.go:456 dpchain/core/consensus.(*ConsensusPromoter).PublishTransactions [TPBFT Consensus] Current Consensus Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has published new transactions (count:1) and broadcast within lower group (net0)!
+
+[2023-12-14 10:59:23] [info] consensusPromoter.go:253 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Current Consensus Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has receive pre-prepare Message from Leader (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) within group (net0)
+
+[2023-12-14 10:59:23] [info] consensusPromoter.go:256 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: Leader (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) doesn't have corresponding roundHandler, Waiting for creation....
+
+[2023-12-14 10:59:23] [info] transactionPool.go:195 dpchain/core/eles.(*TransactionPool).QuickFindTxs 即将被添加的交易 ： 56c79f5ad338246b1d4b1b9ad521f8ef830b18f75de3d8e8c9304378c81a0e5a
+
+[2023-12-14 10:59:23] [info] transactionPool.go:209 dpchain/core/eles.(*TransactionPool).QuickFindTxs QuickFind获取的结果, 第0条交易： 56c79f5ad338246b1d4b1b9ad521f8ef830b18f75de3d8e8c9304378c81a0e5a
+
+[2023-12-14 10:59:23] [info] consensusPromoter.go:302 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus: The new roundHandler (roundID:558564645bf0f5db6c1c33465f070d0ba7e3705caf786156fd73e7c8fdd72f27) has been created and being running
+
+[2023-12-14 10:59:23] [info] blockChain.go:537 dpchain/core/eles.(*BlockChain).StaleCheck [Block Chain] StaleCheck 被调用
+
+[2023-12-14 10:59:23] [info] consensusPromoter.go:249 dpchain/core/consensus.(*ConsensusPromoter).lowerUpdate [TPBFT Consensus] Lower Consensus failed: Leader (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) doesn't have corresponding roundHandler, Cann't process messages of non-StatePrePrepare Msg!
+
+[2023-12-14 10:59:23] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3, msgcode: 2
+
+[2023-12-14 10:59:23] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452, msgcode: 2
+
+[2023-12-14 10:59:23] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 2
+
+[2023-12-14 10:59:23] [info] roundHandler.go:286 dpchain/core/consensus.(*roundHandler).SendPrepareMsg [TPBFT Consensus] Lower Channel: Current Consensus Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has broadcast prepareMsg within roundID (558564645bf0f5db6c1c33465f070d0ba7e3705caf786156fd73e7c8fdd72f27)
+
+[2023-12-14 10:59:23] [info] roundHandler.go:161 dpchain/core/consensus.(*roundHandler).Start [TPBFT Consensus] Lower Channel: roudHandler with round ID: 558564645bf0f5db6c1c33465f070d0ba7e3705caf786156fd73e7c8fdd72f27 starts to running!
+
+[2023-12-14 10:59:23] [info] roundHandler.go:113 dpchain/core/consensus.(*roundHandler).processMsg [TPBFT Consensus] Lower Consensus: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) receive validated PrepareMsg from Node (79f9062bfd04143fce59ed721a1a38400d43487ae6beebb3fd05ba8d02445bd49c01683ed09ed536f1e3ea17a856c96df885a6e165995601b6478bcaaebf1ea3) and has added it into roundHandler.prepareMsgPool
+
+[2023-12-14 10:59:23] [info] roundHandler.go:113 dpchain/core/consensus.(*roundHandler).processMsg [TPBFT Consensus] Lower Consensus: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) receive validated PrepareMsg from Node (04d9d9f799e097007cf2133a88c3f39c066790b5dae8358b4aadca6e1c582f9629795aa33081e981fda8419a2942071e05293e397adf33966ca8ca06376ee452) and has added it into roundHandler.prepareMsgPool
+
+[2023-12-14 10:59:23] [info] roundHandler.go:200 dpchain/core/consensus.(*roundHandler).Do [TPBFT Consensus] Lower Channel: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has completed the prepare phase consensus, validOrder:[1]
+
+[2023-12-14 10:59:23] [info] tpbt_common.go:277 dpchain/core/consensus.(*Ctpbft).TidyTransactions [TPBFT Consensus] Ctpbft: Leader (488e4b944d228f1f01892cfc5bfc060ed37e2f62) Tidy candidateBlock successfully, blockID:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6, txSum:1
+
+[2023-12-14 10:59:23] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 2
+
+[2023-12-14 10:59:23] [info] roundHandler.go:238 dpchain/core/consensus.(*roundHandler).Do [TPBFT Consensus] Lower Channel: Node (8870562e71780cf4a47227af51e09252a98f5461d2d94d20e84db4d6e79a41c09d15ca88bd99a2c33847133d1e134e8e58eb745e3b87240810818f5f235bc4a9) has completed the tidy phase consensus and has sent CommitMsg to the Leader (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)
+
+[2023-12-14 10:59:23] [info] roundHandler.go:170 dpchain/core/consensus.(*roundHandler).Stop.func1 [TPBFT Consensus] Lower Channel: roudHandler with round ID: 558564645bf0f5db6c1c33465f070d0ba7e3705caf786156fd73e7c8fdd72f27 stop!
+
+[2023-12-14 10:59:24] [info] synchronization.go:451 dpchain/blockSync.(*SyncProtocal).syncer Block synchronization: Start block synchronization with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)...  ---  local node currentHeight (5), remote node currentHeight (6)
+
+[2023-12-14 10:59:24] [info] downloader.go:150 dpchain/blockSync/downloader.(*Downloader).Synchronise Block synchronization downloader: Attempting synchronise with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0)... RemoteCurrentVersion (4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6) RemoteCurrentHeight (6)
+
+[2023-12-14 10:59:24] [info] downloader.go:229 dpchain/blockSync/downloader.(*Downloader).FindAncestor Block synchronization downloader: Attempting to query the common ancestor block with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) ...
+
+[2023-12-14 10:59:24] [info] blockChain.go:397 dpchain/core/eles.(*BlockChain).GetCurrentBlock [Block Chain] GetCurrentBlock 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:286 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:313 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 调用结束
+
+[2023-12-14 10:59:24] [info] downloader.go:250 dpchain/blockSync/downloader.(*Downloader).FindAncestor @@@@@@@@@@@@@@@@@@  请求方：本地头区块:4 , 同步起始区块:0
+
+[2023-12-14 10:59:24] [info] synchronization.go:270 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization:  Receive BlockHashesMsg from remote peer (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0), the number of BlockHashes is (6)
+
+[2023-12-14 10:59:24] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:24] [info] downloader.go:298 dpchain/blockSync/downloader.(*Downloader).FindAncestor @@@@@@@@@@@@@@@@@@  处理后起始区块:4,请求个数:1
+
+[2023-12-14 10:59:24] [info] downloader.go:199 dpchain/blockSync/downloader.(*Downloader).syncWithPeer Block synchronization downloader: Fetch common ancestor block is succeed, ancestor blockNumber (4), Number of blocks (1) waiting for synchronization
+
+[2023-12-14 10:59:24] [info] blockChain.go:397 dpchain/core/eles.(*BlockChain).GetCurrentBlock [Block Chain] GetCurrentBlock 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:286 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:313 dpchain/core/eles.(*BlockChain).GetBlockFromHash [Block Chain] GetBlockFromHash 调用结束
+
+[2023-12-14 10:59:24] [info] downloader.go:323 dpchain/blockSync/downloader.(*Downloader).fetchBlocks Block synchronization downloader: Start to fetch (1) blocks by remote node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) from block (4) ...
+
+[2023-12-14 10:59:24] [info] blockChain.go:320 dpchain/core/eles.(*BlockChain).FindVersion [Block Chain] FindVersion 被调用
+
+[2023-12-14 10:59:24] [info] blockChain.go:181 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 开始启动, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6
+
+[2023-12-14 10:59:24] [info] blockChain.go:186 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 进行新区块的插入, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6
+
+[2023-12-14 10:59:24] [info] blockChain.go:192 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成新区块的插入, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6
+
+[2023-12-14 10:59:24] [info] blockChain.go:194 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备执行区块内的交易, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6
+
+[2023-12-14 10:59:24] [info] blockChain.go:202 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对区块内交易的执行, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6
+
+[2023-12-14 10:59:24] [info] blockChain.go:217 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备更新交易过滤器, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6
+
+[2023-12-14 10:59:24] [info] blockChain.go:221 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对交易过滤器的更新, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6
+
+[2023-12-14 10:59:24] [info] blockChain.go:231 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 准备更新区块链状态量, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6 , block Height:6 
+
+[2023-12-14 10:59:24] [info] blockChain.go:240 dpchain/core/eles.(*BlockChain).InsertChain [Block Chain] InsertChain 完成对区块链状态量的更新, block Hash:4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6 , block Height:6 
+
+[2023-12-14 10:59:24] [info] downloader.go:360 dpchain/blockSync/downloader.(*Downloader).fetchBlocks Block synchronization downloader: Block synchronization succeeded, Current local blockchain status: CurrentHeight (6), CurrentVersion (4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6)
+
+[2023-12-14 10:59:24] [info] downloader.go:154 dpchain/blockSync/downloader.(*Downloader).Synchronise Block synchronization downloader: Block Synchronisation with node (13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0) has been completed!
+
+[2023-12-14 10:59:25] [info] dperCommand.go:546 dpchain/dper/client/commandLine.(*CommandLine).printTransactionCheckResults Transaction ID: 56c79f5ad338246b1d4b1b9ad521f8ef830b18f75de3d8e8c9304378c81a0e5a
+
+[2023-12-14 10:59:25] [info] dperCommand.go:547 dpchain/dper/client/commandLine.(*CommandLine).printTransactionCheckResults Valid: true
+
+[2023-12-14 10:59:25] [info] dperCommand.go:548 dpchain/dper/client/commandLine.(*CommandLine).printTransactionCheckResults Transaction Results: [Credential: {Identifier:3ac31f81-2a79-4f2d-bdec-4497b5cb93b1 Subject:DID:22222222 Issuer:DID:11111111 Validity:2023-12-29 Purpose:GetData Signature:f0901058ea48e9ac698de1aaeda30a5a26c972d69e58b8a607cf5ce14009b35c526f15bcb6b807d738ebdce7bf1671539de43fbcb1ffdfde24942676767a255401 Reassign:OK IssuerAddress:488e4b944d228f1f01892cfc5bfc060ed37e2f62 SubjectAddress:a68d361b000f35cfcdc5a5c18a90e50a4ec3b4e9 Transfer:{Recipient:DID:33333333 RecipientPurpose:GetData RecipientAddress:45dd07f9ffe54bd85765c5e17fe2581b3bbf2981 DonorSignature:12b4bd50317f16ce1ab49618d460aa74299a12fd765b7c383a9e2605af72e7be70221efa09983609b0ff237852e5212960a49fa7311693644230ab080e91dae801 Timestamp:2023-12-14}}]
+
+[2023-12-14 10:59:25] [info] dperCommand.go:549 dpchain/dper/client/commandLine.(*CommandLine).printTransactionCheckResults Consensus Delay: 2298 ms
+
+[2023-12-14 10:59:35] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20132)的加密handshake与协议handshake!
+
+[2023-12-14 10:59:35] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:57015的p2p连接请求
+
+[2023-12-14 10:59:35] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:57015)的加密handshake与协议handshake!
+
+[2023-12-14 10:59:35] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:57015)的加密handshake!
+
+[2023-12-14 10:59:35] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:57015 
+
+[2023-12-14 10:59:35] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 8870562e71780cf4 127.0.0.1:57015 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:59:35] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20132)的加密handshake!
+
+[2023-12-14 10:59:35] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20132 
+
+[2023-12-14 10:59:35] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 8870562e71780cf4 127.0.0.1:20132 failed checkpoint posthandshake: Connected to self

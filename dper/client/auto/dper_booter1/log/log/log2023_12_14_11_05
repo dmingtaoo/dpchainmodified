@@ -1,0 +1,22 @@
+[2023-12-14 11:05:55] [info] server.go:602 dpchain/p2p/server.(*Server).listenLoop 接收到来自节点 127.0.0.1:58325的p2p连接请求
+
+[2023-12-14 11:05:55] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:20130)的加密handshake与协议handshake!
+
+[2023-12-14 11:05:55] [info] server.go:616 dpchain/p2p/server.(*Server).setupConn p2pServer等待完成与目标节点(127.0.0.1:58325)的加密handshake与协议handshake!
+
+[2023-12-14 11:05:55] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:58325)的加密handshake!
+
+[2023-12-14 11:05:55] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:58325 
+
+[2023-12-14 11:05:55] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn d8ecfb6a63fa3bf7 127.0.0.1:58325 failed checkpoint posthandshake: Connected to self
+[2023-12-14 11:05:55] [info] server.go:636 dpchain/p2p/server.(*Server).setupConn p2pServer完成与目标节点(127.0.0.1:20130)的加密handshake!
+
+[2023-12-14 11:05:55] [info] server.go:643 dpchain/p2p/server.(*Server).setupConn 下面进行加密handshake的 checkpoint!!! ,127.0.0.1:20130 
+
+[2023-12-14 11:05:55] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn d8ecfb6a63fa3bf7 127.0.0.1:20130 failed checkpoint posthandshake: Connected to self
+[2023-12-14 11:05:56] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 3
+
+[2023-12-14 11:05:56] [info] orderServer.go:430 dpchain/core/blockOrdering.(*BlockOrderServer).tryLaunchNewRound [Block Ordering] A new next message is generated and sent, version: 4a60a6fc8fd7b01a0518290ea763a574969723d7f2a1aef25867d4542eb728d6, height: 6, BlockID: 5928bb059227347eb0ba03d7d341aae252973742536a939bc690253229e6bcb5
+
+[2023-12-14 11:05:56] [info] peer.go:76 dpchain/core/separator.(*peer).sendMsg Separator: Send msg to peer: 13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0, msgcode: 3
+

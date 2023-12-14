@@ -1,0 +1,11 @@
+{
+"BooterKeyAddress": "5ffe3b0e027794b0772a4a80f6628b0067ed523c",
+"BootstrapNodesFilePath": "./booters/booter.txt",
+"CentralConfigMode": false,
+"KeyStoreDir": "./booterKeyStore",
+"ListenAddress": "127.0.0.1:20130",
+"MaxPeerNum": 20,
+"NATKind": "Any",
+"NewAddressMode": false,
+"ServerName": "booter"
+}

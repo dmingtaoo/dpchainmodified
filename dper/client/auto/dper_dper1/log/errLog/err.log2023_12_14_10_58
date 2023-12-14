@@ -1,0 +1,22 @@
+[2023-12-14 10:58:13] [warning] blockChain.go:507 dpchain/core/eles.(*BlockChain).CommitBlock Current NodeID:13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0 commit Block into LevelDB
+
+[2023-12-14 10:58:13] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (1) and currentHeight (0)
+
+[2023-12-14 10:58:14] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (1) and currentHeight (0)
+
+[2023-12-14 10:58:28] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn inbound conn 13229046edacba0b 127.0.0.1:56525 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:58:28] [warning] server.go:646 dpchain/p2p/server.(*Server).setupConn dyn dial conn 13229046edacba0b 127.0.0.1:20131 failed checkpoint posthandshake: Connected to self
+[2023-12-14 10:58:43] [warning] blockChain.go:507 dpchain/core/eles.(*BlockChain).CommitBlock Current NodeID:13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0 commit Block into LevelDB
+
+[2023-12-14 10:58:44] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (2) and currentHeight (1)
+
+[2023-12-14 10:58:44] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (2) and currentHeight (1)
+
+[2023-12-14 10:58:45] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (2) and currentHeight (1)
+
+[2023-12-14 10:58:57] [warning] blockChain.go:507 dpchain/core/eles.(*BlockChain).CommitBlock Current NodeID:13229046edacba0bf2fae9ebbe0f3c7eccaa0291458983f36512d12b69457344de3e150a6441c1dc942012fa78af7eab5c3c12d984e66c5be60562b8d3b706d0 commit Block into LevelDB
+
+[2023-12-14 10:58:58] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (3) and currentHeight (2)
+
+[2023-12-14 10:58:58] [warning] synchronization.go:236 dpchain/blockSync.(*SyncProtocal).handleMsg Block synchronization: The number (30) of blocks requested by the remote node, and the actual number of blocks returned is (3) and currentHeight (2)
+
